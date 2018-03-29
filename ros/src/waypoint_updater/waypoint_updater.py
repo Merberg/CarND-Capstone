@@ -5,6 +5,7 @@ from geometry_msgs.msg import PoseStamped
 from styx_msgs.msg import Lane, Waypoint
 
 import math
+from scipy._lib._ccallback_c import idx
 
 '''
 This node will publish waypoints from the car's current position to some `x` distance ahead.
@@ -34,18 +35,31 @@ class WaypointUpdater(object):
         # TODO: Add a subscriber for /traffic_waypoint and /obstacle_waypoint below
 
 
-        self.final_waypoints_pub = rospy.Publisher('final_waypoints', Lane, queue_size=1)
+        self.final_waypoints_pub = rospy.Publisher('final_waypoints', Lane, queue_size=2)
 
+        
         # TODO: Add other member variables you need below
+        self.base_init = False
+        self.base = Lane()
+        self.final = Lane()
+        self.first_index = 0
 
-        rospy.spin()
+        # spin() keeps python from exiting until this node is stopped
+        rospy.spin()                   
 
     def pose_cb(self, msg):
-        # TODO: Implement
+        if self.base_init:
+            self.first_index = self.get_next_waypoint_index(self.base.waypoints,
+                                                            msg.pose.position,
+                                                            self.first_index)
+            self.final.waypoints = self.set_final_waypoints(self.base.waypoints, self.first_index, 5)
+            self.final_waypoints_pub.publish(self.final)                                                    
         pass
 
     def waypoints_cb(self, waypoints):
-        # TODO: Implement
+        self.base = waypoints
+        rospy.loginfo('%i Base Waypoints', len(waypoints.waypoints))
+        self.base_init = True            
         pass
 
     def traffic_cb(self, msg):
@@ -55,6 +69,9 @@ class WaypointUpdater(object):
     def obstacle_cb(self, msg):
         # TODO: Callback for /obstacle_waypoint message. We will implement it later
         pass
+    
+    def get_waypoint_position(self, waypoint):
+        return waypoint.pose.pose.position
 
     def get_waypoint_velocity(self, waypoint):
         return waypoint.twist.twist.linear.x
@@ -62,11 +79,44 @@ class WaypointUpdater(object):
     def set_waypoint_velocity(self, waypoints, waypoint, velocity):
         waypoints[waypoint].twist.twist.linear.x = velocity
 
+    def get_next_waypoint_index(self, waypoints, position, first_index):
+        rospy.loginfo('Prev %i to %i', first_index, len(waypoints))
+        prev_idx = max(first_index-1, 0)
+                
+        for idx, wp in enumerate(waypoints[first_index:]):            
+            wp_pos = self.get_waypoint_position(wp)
+            prev_wp_pos = self.get_waypoint_position(waypoints[prev_idx])
+            
+            if prev_wp_pos.x <= position.x and position.x < wp_pos.x:
+                rospy.loginfo('(%.3f, %.3f, %.3f) Next waypoint = %i (%.3f, %.3f, %.3f)',
+                              position.x, position.y, position.z, 
+                              first_index + idx,
+                              wp_pos.x, wp_pos.y, wp_pos.z)
+                return first_index + idx
+            else:
+                prev_idx = max(first_index+idx-1, 0)
+        
+        rospy.loginfo('Next waypoint rolling over, car at (%.3f, %.3f, %.3f)', 
+                     position.x, position.y, position.z)
+        first_index = 0
+        idx = self.get_next_waypoint_index(waypoints, position, first_index)
+        return idx
+    
+    def set_final_waypoints(self, waypoints, first_index, velocity):
+        #Function for the partial implementation testing
+        final = []
+        wp = Waypoint()
+        for idx in range(LOOKAHEAD_WPS):
+            wp.pose.pose.position = self.get_waypoint_position(waypoints[idx+first_index])
+            wp.twist.twist.linear.x = velocity
+            final.append(wp)
+        return final
+        
     def distance(self, waypoints, wp1, wp2):
         dist = 0
         dl = lambda a, b: math.sqrt((a.x-b.x)**2 + (a.y-b.y)**2  + (a.z-b.z)**2)
         for i in range(wp1, wp2+1):
-            dist += dl(waypoints[wp1].pose.pose.position, waypoints[i].pose.pose.position)
+            dist += dl(self.get_waypoint_position(waypoints[wp1]), self.get_waypoint_position(waypoints[i]))
             wp1 = i
         return dist
 
