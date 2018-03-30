@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 
+import numpy as np
 import rospy
 from geometry_msgs.msg import PoseStamped
 from styx_msgs.msg import Lane, Waypoint
+from scipy.spatial import KDTree
 
 import math
 from scipy._lib._ccallback_c import idx
@@ -33,34 +35,35 @@ class WaypointUpdater(object):
         rospy.Subscriber('/base_waypoints', Lane, self.waypoints_cb)
 
         # TODO: Add a subscriber for /traffic_waypoint and /obstacle_waypoint below
-
-
         self.final_waypoints_pub = rospy.Publisher('final_waypoints', Lane, queue_size=2)
-
         
         # TODO: Add other member variables you need below
-        self.base_init = False
-        self.base = Lane()
-        self.final = Lane()
-        self.first_index = 0
+        self.pose = None
+        self.base_waypoints = None
+        self.base_waypoints_xy = None
+        self.base_waypoint_tree = None
+        self.final_waypoints = None
 
-        # spin() keeps python from exiting until this node is stopped
-        rospy.spin()                   
+        self.loop()
+        
+    def loop(self):
+        rate = rospy.Rate(50)
+        while not rospy.is_shutdown():
+            # Guard against acting before the callbacks occur
+            if self.pose and self.base_waypoints:
+                closest_idx = self.get_closest_waypoint_index()
+                self.publish_waypoints(closest_idx)
+            rate.sleep()
 
     def pose_cb(self, msg):
-        if self.base_init:
-            self.first_index = self.get_next_waypoint_index(self.base.waypoints,
-                                                            msg.pose.position,
-                                                            self.first_index)
-            self.final.waypoints = self.set_final_waypoints(self.base.waypoints, self.first_index, 5)
-            self.final_waypoints_pub.publish(self.final)                                                    
-        pass
+        self.pose = msg
 
     def waypoints_cb(self, waypoints):
-        self.base = waypoints
-        rospy.loginfo('%i Base Waypoints', len(waypoints.waypoints))
-        self.base_init = True            
-        pass
+        self.base_waypoints = waypoints
+        if not self.base_waypoints_xy:
+            self.base_waypoints_xy = [[wp.pose.pose.position.x, wp.pose.pose.position.y] \
+                                       for wp in waypoints.waypoints]
+            self.base_waypoint_tree = KDTree(self.base_waypoints_xy)
 
     def traffic_cb(self, msg):
         # TODO: Callback for /traffic_waypoint message. Implement
@@ -69,9 +72,6 @@ class WaypointUpdater(object):
     def obstacle_cb(self, msg):
         # TODO: Callback for /obstacle_waypoint message. We will implement it later
         pass
-    
-    def get_waypoint_position(self, waypoint):
-        return waypoint.pose.pose.position
 
     def get_waypoint_velocity(self, waypoint):
         return waypoint.twist.twist.linear.x
@@ -79,44 +79,35 @@ class WaypointUpdater(object):
     def set_waypoint_velocity(self, waypoints, waypoint, velocity):
         waypoints[waypoint].twist.twist.linear.x = velocity
 
-    def get_next_waypoint_index(self, waypoints, position, first_index):
-        rospy.loginfo('Prev %i to %i', first_index, len(waypoints))
-        prev_idx = max(first_index-1, 0)
-                
-        for idx, wp in enumerate(waypoints[first_index:]):            
-            wp_pos = self.get_waypoint_position(wp)
-            prev_wp_pos = self.get_waypoint_position(waypoints[prev_idx])
-            
-            if prev_wp_pos.x <= position.x and position.x < wp_pos.x:
-                rospy.loginfo('(%.3f, %.3f, %.3f) Next waypoint = %i (%.3f, %.3f, %.3f)',
-                              position.x, position.y, position.z, 
-                              first_index + idx,
-                              wp_pos.x, wp_pos.y, wp_pos.z)
-                return first_index + idx
-            else:
-                prev_idx = max(first_index+idx-1, 0)
+    def get_closest_waypoint_index(self):
+        x = self.pose.pose.position.x
+        y = self.pose.pose.position.y
+        closest_idx = self.base_waypoint_tree.query([x, y], 1)[1]
+
+        # Determine where the closest is relative to the car
+        closest_vect = np.array(self.base_waypoints_xy[closest_idx])
+        prev_vect = np.array(self.base_waypoints_xy[closest_idx-1])
+        pose_vect = np.array([x, y])
         
-        rospy.loginfo('Next waypoint rolling over, car at (%.3f, %.3f, %.3f)', 
-                     position.x, position.y, position.z)
-        first_index = 0
-        idx = self.get_next_waypoint_index(waypoints, position, first_index)
-        return idx
+        # Positive dot product means the closest is behind the car
+        # and the next waypoint needs to be used
+        val = np.dot(closest_vect-prev_vect, pose_vect-closest_vect)
+        if val > 0:
+            closest_idx = (closest_idx + 1) % len(self.base_waypoints_xy)
+        
+        return closest_idx        
     
-    def set_final_waypoints(self, waypoints, first_index, velocity):
-        #Function for the partial implementation testing
-        final = []
-        wp = Waypoint()
-        for idx in range(LOOKAHEAD_WPS):
-            wp.pose.pose.position = self.get_waypoint_position(waypoints[idx+first_index])
-            wp.twist.twist.linear.x = velocity
-            final.append(wp)
-        return final
+    def publish_waypoints(self, closest_idx):
+        lane = Lane()
+        lane.header = self.base_waypoints.header
+        lane.waypoints = self.base_waypoints.waypoints[closest_idx:closest_idx + LOOKAHEAD_WPS]
+        self.final_waypoints_pub.publish(lane)        
         
     def distance(self, waypoints, wp1, wp2):
         dist = 0
         dl = lambda a, b: math.sqrt((a.x-b.x)**2 + (a.y-b.y)**2  + (a.z-b.z)**2)
         for i in range(wp1, wp2+1):
-            dist += dl(self.get_waypoint_position(waypoints[wp1]), self.get_waypoint_position(waypoints[i]))
+            dist += dl(wp1.pose.pose.position, waypoints[i].pose.pose.position)
             wp1 = i
         return dist
 
