@@ -81,13 +81,14 @@ def main(_):
     #examples = yaml.load(open(INPUT_YAML, 'rb').read())
     
     # LISA
-    INPUT_YAML = "data/TFRecordCreation/LISA_dayTrain.yaml"
+    INPUT_YAML = "LISA_dayTrain.yaml"
+    INPUT_DATA = "/media/merberg/Centre/LISA_traffic_light_dataset"
     examples = yaml.load(open(INPUT_YAML, 'rb').read())
     n_examples = len(examples)
     print("Loaded ", len(examples), "examples")
     
     for i in range(len(examples)):
-        examples[i]['path'] = os.path.abspath(os.path.join(os.path.dirname(INPUT_YAML), examples[i]['path']))
+        examples[i]['path'] = os.path.abspath(os.path.join(os.path.dirname(INPUT_DATA), examples[i]['path']))
         examples[i]['source'] = 'LISA'
     
     for counter, example in enumerate(examples):
