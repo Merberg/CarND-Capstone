@@ -1,6 +1,6 @@
 # Preparing The TFRecord for Training
 
-These files create the [TFRecord file format](https://www.tensorflow.org/api_guides/python/python_io#tfrecords_format_details) per the Tensorflow Object Detection API.  The [Bosch Small Traffic Lights](https://hci.iwr.uni-heidelberg.de/node/6132) and the [Kaggle LISA Traffic Light](https://www.kaggle.com/mbornoe/lisa-traffic-light-dataset/version/2) datasets are used.   
+These files create the [TFRecord file format](https://www.tensorflow.org/api_guides/python/python_io#tfrecords_format_details) per the Tensorflow Object Detection API.  The [Bosch Small Traffic Lights](https://hci.iwr.uni-heidelberg.de/node/6132) (test_rgb_007 and additional_rgb) and the [Kaggle LISA Traffic Light](https://www.kaggle.com/mbornoe/lisa-traffic-light-dataset/version/2) (dayTrain) datasets are used.   
 
 ### Instructions for Use
 
