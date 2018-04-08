@@ -1,7 +1,9 @@
 import tensorflow as tf
+import yaml
+import os
 import sys
 sys.path.insert(0, '/~/Documents/models/research/object_detection/utils')
-import dataset_util
+from object_detection.utils import dataset_util
 
 flags = tf.app.flags
 flags.DEFINE_string('output_path', '', 'Path to output TFRecord')
@@ -25,13 +27,13 @@ LABEL_DICT = {
     }
 
 
-def create_tf_example(example):
-    if example['source'] == 'LISA'
+def create_tf_example(example, example_source):
+    if example_source == "LISA":
         image_height = 960
         image_width = 1280
         image_format = 'jpeg'.encode()
 
-    else
+    else:
         # Bosch
         image_height = 720
         image_width = 1280
@@ -72,32 +74,41 @@ def create_tf_example(example):
         }))
     return tf_example
 
+def write_tf_examples(writer, yaml_file, image_data, example_source):
+    
+    # Load the YAML
+    examples = yaml.load(open(yaml_file, 'rb').read())
+    n_examples = len(examples)
+    print("Loaded {:d} Examples...".format(len(examples)))
+    
+    # Set the path
+    for i in range(len(examples)):
+        examples[i]['path'] = os.path.abspath(os.path.join(os.path.dirname(image_data), examples[i]['path']))
+    
+    # Write the examples
+    for counter, example in enumerate(examples):
+        tf_example = create_tf_example(example, example_source)
+        writer.write(tf_example.SerializeToString())
+        
+        if counter % 100 == 0:
+            print("Percent Done: {:.2f}%".format((float(counter)/float(n_examples))*100))
+    
+    return writer
 
 def main(_):
     writer = tf.python_io.TFRecordWriter(FLAGS.output_path)
 
     # BOSCH
-    #INPUT_YAML = "data/TFRecordCreation/BOSCH_addition_train.yaml"
-    #examples = yaml.load(open(INPUT_YAML, 'rb').read())
-    
+    yaml_file = "BOSCH.yaml"
+    image_data = "/media/merberg/Centre/Bosch_Small_traffic_lights_dataset/"
+    example_source = "BOSCH"
+    writer = write_tf_examples(writer, yaml_file, image_data, example_source)
+       
     # LISA
-    INPUT_YAML = "LISA_dayTrain.yaml"
-    INPUT_DATA = "/media/merberg/Centre/LISA_traffic_light_dataset"
-    examples = yaml.load(open(INPUT_YAML, 'rb').read())
-    n_examples = len(examples)
-    print("Loaded ", len(examples), "examples")
-    
-    for i in range(len(examples)):
-        examples[i]['path'] = os.path.abspath(os.path.join(os.path.dirname(INPUT_DATA), examples[i]['path']))
-        examples[i]['source'] = 'LISA'
-    
-    for counter, example in enumerate(examples):
-        tf_example = create_tf_example(example)
-        writer.write(tf_example.SerializeToString())
-        
-        if counter % 10 == 0:
-            print("Percent done", (counter/n_examples)*100)
-        counter += 1
+    yaml_file = "LISA_dayTrain.yaml"
+    image_data = "/media/merberg/Centre/LISA_traffic_light_dataset/"
+    example_source = "LISA"
+    writer = write_tf_examples(writer, yaml_file, image_data, example_source)
     
     writer.close()
 
