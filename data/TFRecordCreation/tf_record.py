@@ -28,10 +28,11 @@ LABEL_DICT = {
 
 
 def create_tf_example(example, example_source):
+    MIN_DELTA = 5
     if example_source == "LISA":
         image_height = 960
         image_width = 1280
-        image_format = 'jpeg'.encode()
+        image_format = 'jpg'.encode()
 
     else:
         # Bosch
@@ -39,40 +40,50 @@ def create_tf_example(example, example_source):
         image_width = 1280
         image_format = 'png'.encode()
     
-    filename = example['path']
-    with tf.gfile.GFile(example['path'], 'rb') as fid:
-        encoded_image = fid.read()
-    
+    filename = example['path']    
+    valid_example = False
     xmins = []  # List of normalized left x coordinates in bounding box (1 per box)
     xmaxs = []  # List of normalized right x coordinates in bounding box (1 per box)
     ymins = []  # List of normalized top y coordinates in bounding box (1 per box)
     ymaxs = []  # List of normalized bottom y coordinates in bounding box (1 per box)
     classes_text = []  # List of string class name of bounding box (1 per box)
     classes = []  # List of integer class id of bounding box (1 per box)
+    tf_example = []
     
     for box in example['boxes']:
-        xmins.append(float(box['x_min'] / image_width))
-        xmaxs.append(float(box['x_max'] / image_width))
-        ymins.append(float(box['y_min'] / image_height))
-        ymaxs.append(float(box['y_max'] / image_height))
-        classes_text.append(box['label'].encode())
-        classes.append(int(LABEL_DICT[box['label']]))
+        # Check that the box is within range
+        x_max = min(box['x_max'], image_width-1)
+        y_max = min(box['y_max'], image_height-1)
+        if (x_max - box['x_min']) >= MIN_DELTA and (y_max - box['y_min']) >= MIN_DELTA:
+            xmins.append(float(box['x_min'] / image_width))
+            xmaxs.append(float(x_max / image_width))
+            ymins.append(float(box['y_min'] / image_height))
+            ymaxs.append(float(y_max / image_height))
+            classes_text.append(box['label'].encode())
+            classes.append(int(LABEL_DICT[box['label']]))
+            valid_example = True
+            
     
-    tf_example = tf.train.Example(features=tf.train.Features(feature={
-        'image/height': dataset_util.int64_feature(image_height),
-        'image/width': dataset_util.int64_feature(image_width),
-        'image/filename': dataset_util.bytes_feature(filename),
-        'image/source_id': dataset_util.bytes_feature(filename),
-        'image/encoded': dataset_util.bytes_feature(encoded_image),
-        'image/format': dataset_util.bytes_feature(image_format),
-        'image/object/bbox/xmin': dataset_util.float_list_feature(xmins),
-        'image/object/bbox/xmax': dataset_util.float_list_feature(xmaxs),
-        'image/object/bbox/ymin': dataset_util.float_list_feature(ymins),
-        'image/object/bbox/ymax': dataset_util.float_list_feature(ymaxs),
-        'image/object/class/text': dataset_util.bytes_list_feature(classes_text),
-        'image/object/class/label': dataset_util.int64_list_feature(classes),
-        }))
-    return tf_example
+    if valid_example:
+        with tf.gfile.GFile(filename, 'rb') as fid:
+            encoded_image = fid.read()
+            
+        tf_example = tf.train.Example(features=tf.train.Features(feature={
+            'image/height': dataset_util.int64_feature(image_height),
+            'image/width': dataset_util.int64_feature(image_width),
+            'image/filename': dataset_util.bytes_feature(filename),
+            'image/source_id': dataset_util.bytes_feature(filename),
+            'image/encoded': dataset_util.bytes_feature(encoded_image),
+            'image/format': dataset_util.bytes_feature(image_format),
+            'image/object/bbox/xmin': dataset_util.float_list_feature(xmins),
+            'image/object/bbox/xmax': dataset_util.float_list_feature(xmaxs),
+            'image/object/bbox/ymin': dataset_util.float_list_feature(ymins),
+            'image/object/bbox/ymax': dataset_util.float_list_feature(ymaxs),
+            'image/object/class/text': dataset_util.bytes_list_feature(classes_text),
+            'image/object/class/label': dataset_util.int64_list_feature(classes),
+            }))
+        
+    return valid_example, tf_example
 
 def write_tf_examples(writer, yaml_file, image_data, example_source):
     
@@ -86,14 +97,17 @@ def write_tf_examples(writer, yaml_file, image_data, example_source):
         examples[i]['path'] = os.path.abspath(os.path.join(os.path.dirname(image_data), examples[i]['path']))
     
     # Write the examples
+    n_valid = 0
     for counter, example in enumerate(examples):
-        tf_example = create_tf_example(example, example_source)
-        writer.write(tf_example.SerializeToString())
+        valid_example, tf_example = create_tf_example(example, example_source)
+        if valid_example:
+            writer.write(tf_example.SerializeToString())
+            n_valid += 1
         
         if counter % 200 == 0:
             print("Percent Done: {:.2f}%".format((float(counter)/float(n_examples))*100))
     
-    return n_examples, writer
+    return n_valid, writer
 
 def main(_):
     writer = tf.python_io.TFRecordWriter(FLAGS.output_path)
@@ -103,14 +117,14 @@ def main(_):
     yaml_file = "BOSCH.yaml"
     image_data = "/media/merberg/Centre/Bosch_Small_traffic_lights_dataset/"
     example_source = "BOSCH"
-    #n_bosch, writer = write_tf_examples(writer, yaml_file, image_data, example_source)
+    n_bosch, writer = write_tf_examples(writer, yaml_file, image_data, example_source)
        
     # LISA
     n_lisa = 0
     yaml_file = "LISA_dayTrain.yaml"
     image_data = "/media/merberg/Centre/LISA_traffic_light_dataset/"
     example_source = "LISA"
-    n_lisa, writer = write_tf_examples(writer, yaml_file, image_data, example_source)
+    #n_lisa, writer = write_tf_examples(writer, yaml_file, image_data, example_source)
     
     writer.close()
     print("TFRecord created from {:d} examples".format(n_bosch+n_lisa))
