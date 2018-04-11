@@ -82,7 +82,7 @@ def write_tf_examples(writer, yaml_file, image_data, example_source):
     print("Loaded {:d} Examples...".format(len(examples)))
     
     # Set the path
-    for i in range(len(examples)):
+    for i in range(n_examples):
         examples[i]['path'] = os.path.abspath(os.path.join(os.path.dirname(image_data), examples[i]['path']))
     
     # Write the examples
@@ -90,27 +90,31 @@ def write_tf_examples(writer, yaml_file, image_data, example_source):
         tf_example = create_tf_example(example, example_source)
         writer.write(tf_example.SerializeToString())
         
-        if counter % 100 == 0:
+        if counter % 200 == 0:
             print("Percent Done: {:.2f}%".format((float(counter)/float(n_examples))*100))
     
-    return writer
+    return n_examples, writer
 
 def main(_):
     writer = tf.python_io.TFRecordWriter(FLAGS.output_path)
 
     # BOSCH
+    n_bosch = 0
     yaml_file = "BOSCH.yaml"
     image_data = "/media/merberg/Centre/Bosch_Small_traffic_lights_dataset/"
     example_source = "BOSCH"
-    writer = write_tf_examples(writer, yaml_file, image_data, example_source)
+    #n_bosch, writer = write_tf_examples(writer, yaml_file, image_data, example_source)
        
     # LISA
+    n_lisa = 0
     yaml_file = "LISA_dayTrain.yaml"
     image_data = "/media/merberg/Centre/LISA_traffic_light_dataset/"
     example_source = "LISA"
-    writer = write_tf_examples(writer, yaml_file, image_data, example_source)
+    n_lisa, writer = write_tf_examples(writer, yaml_file, image_data, example_source)
     
     writer.close()
+    print("TFRecord created from {:d} examples".format(n_bosch+n_lisa))
+    # Now run:  python tf_record.py --output_path ../../ros/src/tl_detector/light_classification/training/data/training.record
 
 
 if __name__ == '__main__':
