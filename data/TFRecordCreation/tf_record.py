@@ -1,12 +1,13 @@
 import tensorflow as tf
 import yaml
 import os
+import random
 import sys
 sys.path.insert(0, '/~/Documents/models/research/object_detection/utils')
 from object_detection.utils import dataset_util
 
 flags = tf.app.flags
-flags.DEFINE_string('output_path', '', 'Path to output TFRecord')
+flags.DEFINE_string('output_dir', '', 'Path to directory to output TFRecords.')
 FLAGS = flags.FLAGS
 
 LABEL_DICT = {
@@ -85,7 +86,7 @@ def create_tf_example(example, example_source):
         
     return valid_example, tf_example
 
-def write_tf_examples(writer, yaml_file, image_data, example_source):
+def write_tf_examples(train_writer, val_writer, yaml_file, image_data, example_source):
     
     # Load the YAML
     examples = yaml.load(open(yaml_file, 'rb').read())
@@ -96,40 +97,62 @@ def write_tf_examples(writer, yaml_file, image_data, example_source):
     for i in range(n_examples):
         examples[i]['path'] = os.path.abspath(os.path.join(os.path.dirname(image_data), examples[i]['path']))
     
-    # Write the examples
+    # Store the examples
     n_valid = 0
+    tf_example_list = []
     for counter, example in enumerate(examples):
         valid_example, tf_example = create_tf_example(example, example_source)
         if valid_example:
-            writer.write(tf_example.SerializeToString())
+            tf_example_list.append(tf_example)
             n_valid += 1
         
-        if counter % 200 == 0:
+        if counter % 500 == 0:
             print("Percent Done: {:.2f}%".format((float(counter)/float(n_examples))*100))
     
-    return n_valid, writer
+    
+    # Test and validation split
+    random.seed(42)
+    random.shuffle(tf_example_list)
+    n_train = int(0.7 * n_valid)
+    train_examples = tf_example_list[:n_train]
+    val_examples = tf_example_list[n_train:]
+    
+    for tf_example in train_examples:
+        train_writer.write(tf_example.SerializeToString())
+    
+    for tf_example in val_examples:
+        val_writer.write(tf_example.SerializeToString())
+    
+    print("{:d} training and {:d} validation examples.".format(len(train_examples), len(val_examples)))
+    return [len(train_examples), len(val_examples)], train_writer, val_writer
 
 def main(_):
-    writer = tf.python_io.TFRecordWriter(FLAGS.output_path)
+    #python tf_record.py --output_dir ../../ros/src/tl_detector/light_classification/training/data
+ 
+    train_output_path = os.path.join(FLAGS.output_dir, 'tl_train.record')
+    val_output_path = os.path.join(FLAGS.output_dir, 'tl_val.record')
+
+    train_writer = tf.python_io.TFRecordWriter(train_output_path)
+    val_writer = tf.python_io.TFRecordWriter(val_output_path)
 
     # BOSCH
     n_bosch = 0
     yaml_file = "BOSCH.yaml"
     image_data = "/media/merberg/Centre/Bosch_Small_traffic_lights_dataset/"
     example_source = "BOSCH"
-    n_bosch, writer = write_tf_examples(writer, yaml_file, image_data, example_source)
+    n_bosch, train_writer, val_writer = write_tf_examples(train_writer, val_writer, yaml_file, image_data, example_source)
        
     # LISA
     n_lisa = 0
     yaml_file = "LISA_dayTrain.yaml"
     image_data = "/media/merberg/Centre/LISA_traffic_light_dataset/"
     example_source = "LISA"
-    #n_lisa, writer = write_tf_examples(writer, yaml_file, image_data, example_source)
+    n_lisa, train_writer, val_writer = write_tf_examples(train_writer, val_writer, yaml_file, image_data, example_source)
     
-    writer.close()
-    print("TFRecord created from {:d} examples".format(n_bosch+n_lisa))
-    # Now run:  python tf_record.py --output_path ../../ros/src/tl_detector/light_classification/training/data/training.record
-
+    train_writer.close();      
+    val_writer.close()    
+    print("TRAIN TFRecord created from {:d} examples".format(n_bosch[0]+n_lisa[0]))
+    print("VAL TFRecord created from {:d} examples".format(n_bosch[1]+n_lisa[1]))
 
 if __name__ == '__main__':
   tf.app.run()
