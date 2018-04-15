@@ -127,7 +127,7 @@ def write_tf_examples(train_writer, val_writer, yaml_file, image_data, example_s
     return [len(train_examples), len(val_examples)], train_writer, val_writer
 
 def main(_):
-    #python tf_record.py --output_dir ./
+    #python tf_record.py --output_dir /media/merberg/Centre/
  
     train_output_path = os.path.join(FLAGS.output_dir, 'tl_train.record')
     val_output_path = os.path.join(FLAGS.output_dir, 'tl_val.record')
@@ -136,21 +136,24 @@ def main(_):
     val_writer = tf.python_io.TFRecordWriter(val_output_path)
 
     # BOSCH
-    n_bosch = 0
-    yaml_file = "BOSCH_train.yaml"
     image_data = "/media/merberg/Centre/Bosch_Small_traffic_lights_dataset/"
     example_source = "BOSCH"
-    n_bosch_train, train_writer, val_writer = write_tf_examples(train_writer, val_writer, yaml_file, image_data, example_source)
+    
+    n_bosch_test = [0,0]
     yaml_file = "BOSCH_test.yaml"   
     n_bosch_test, train_writer, val_writer = write_tf_examples(train_writer, val_writer, yaml_file, image_data, example_source)
-    
+ 
+    n_bosch_train = [0,0]    
+    yaml_file = "BOSCH_train.yaml"
+    n_bosch_train, train_writer, val_writer = write_tf_examples(train_writer, val_writer, yaml_file, image_data, example_source)
+       
        
     # LISA
-    n_lisa = 0
-    yaml_file = "LISA_dayTrain.yaml"
     image_data = "/media/merberg/Centre/LISA_traffic_light_dataset/"
     example_source = "LISA"
-    n_lisa, train_writer, val_writer = write_tf_examples(train_writer, val_writer, yaml_file, image_data, example_source)
+    n_lisa = [0,0]
+    yaml_file = "LISA_dayTrain.yaml"
+    #n_lisa, train_writer, val_writer = write_tf_examples(train_writer, val_writer, yaml_file, image_data, example_source)
     
     train_writer.close();      
     val_writer.close()    
