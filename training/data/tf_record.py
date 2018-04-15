@@ -113,7 +113,7 @@ def write_tf_examples(train_writer, val_writer, yaml_file, image_data, example_s
     # Test and validation split
     random.seed(42)
     random.shuffle(tf_example_list)
-    n_train = int(0.7 * n_valid)
+    n_train = int(0.8 * n_valid)
     train_examples = tf_example_list[:n_train]
     val_examples = tf_example_list[n_train:]
     
@@ -127,7 +127,7 @@ def write_tf_examples(train_writer, val_writer, yaml_file, image_data, example_s
     return [len(train_examples), len(val_examples)], train_writer, val_writer
 
 def main(_):
-    #python tf_record.py --output_dir ../../ros/src/tl_detector/light_classification/training/data
+    #python tf_record.py --output_dir ./
  
     train_output_path = os.path.join(FLAGS.output_dir, 'tl_train.record')
     val_output_path = os.path.join(FLAGS.output_dir, 'tl_val.record')
@@ -137,10 +137,13 @@ def main(_):
 
     # BOSCH
     n_bosch = 0
-    yaml_file = "BOSCH.yaml"
+    yaml_file = "BOSCH_train.yaml"
     image_data = "/media/merberg/Centre/Bosch_Small_traffic_lights_dataset/"
     example_source = "BOSCH"
-    n_bosch, train_writer, val_writer = write_tf_examples(train_writer, val_writer, yaml_file, image_data, example_source)
+    n_bosch_train, train_writer, val_writer = write_tf_examples(train_writer, val_writer, yaml_file, image_data, example_source)
+    yaml_file = "BOSCH_test.yaml"   
+    n_bosch_test, train_writer, val_writer = write_tf_examples(train_writer, val_writer, yaml_file, image_data, example_source)
+    
        
     # LISA
     n_lisa = 0
@@ -151,8 +154,8 @@ def main(_):
     
     train_writer.close();      
     val_writer.close()    
-    print("TRAIN TFRecord created from {:d} examples".format(n_bosch[0]+n_lisa[0]))
-    print("VAL TFRecord created from {:d} examples".format(n_bosch[1]+n_lisa[1]))
+    print("TRAIN TFRecord created from {:d} examples".format(n_bosch_train[0]+n_bosch_test[0]+n_lisa[0]))
+    print("VAL TFRecord created from {:d} examples".format(n_bosch_train[1]+n_bosch_test[1]+n_lisa[1]))
 
 if __name__ == '__main__':
   tf.app.run()
