@@ -71,7 +71,12 @@ class TLDetector(object):
         '''
         TODO: Just to do some tests - please remove
         '''
-        self.process_traffic_lights()
+        light_wp, self.state = self.process_traffic_lights()
+
+        self.last_state = self.state
+        light_wp = light_wp if self.state == TrafficLight.RED else -1
+        self.last_wp = light_wp
+        self.upcoming_red_light_pub.publish(Int32(light_wp))
 
     def image_cb(self, msg):
         """Identifies red lights in the incoming camera image and publishes the index

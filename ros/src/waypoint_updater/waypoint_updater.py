@@ -106,7 +106,6 @@ class WaypointUpdater(object):
         for i, wp in enumerate(waypoints):
             p=Waypoint()
             p.pose=wp.pose
-# This the line below
             stop_idx=max(self.Stopline_wp_idx - closest_idx - 2, 0)
 
             dist=self.distance(waypoints,i,stop_idx)
@@ -134,6 +133,8 @@ class WaypointUpdater(object):
     def traffic_cb(self, msg):
   #      rospy.loginfo('got to traffic_cb')
         self.Stopline_wp_idx = msg.data
+        if(self.Stopline_wp_idx != -1):
+            rospy.logerr('RED light')
 
     def obstacle_cb(self, msg):
         # TODO: Callback for /obstacle_waypoint message. We will implement it later

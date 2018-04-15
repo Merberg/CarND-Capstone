@@ -30,7 +30,7 @@ class TLClassifier(object):
                 rospy.logerr('Traffic Light GREEN')
         else:
             self.last_time = rospy.get_time()
-            randvalue = random.randint(0,1000)
+            randvalue = random.randint(0,10000)
             
             if randvalue < 2:
                 self.current_light = TrafficLight.RED
