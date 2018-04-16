@@ -89,7 +89,7 @@ command from tensorflow/models/research:
 python object_detection/export_inference_graph.py \
     --input_type image_tensor \
     --pipeline_config_path models/${DESIRED_MODEL}/pipeline.conf \
-    --trained_checkpoint_prefix models/${DESIRED_MODEL}/train \
+    --trained_checkpoint_prefix models/${DESIRED_MODEL}/train/model.chpt-${DESIRED_MODEL} \
     --output_directory models/${DESIRED_MODEL}/fine_tuned_model
 ```
 The `frozen_inference_graph.pb` is now trained for use.
