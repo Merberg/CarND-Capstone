@@ -30,7 +30,7 @@ class WaypointLoader(object):
         if os.path.isfile(path):
             waypoints = self.load_waypoints(path)
             self.publish(waypoints)
-            rospy.loginfo('Waypoint Loded')
+            rospy.loginfo('Waypoint Loaded')
         else:
             rospy.logerr('%s is not a file', path)
 
@@ -42,6 +42,7 @@ class WaypointLoader(object):
 
     def load_waypoints(self, fname):
         waypoints = []
+        rospy.logdebug('*** from load_waypoints ***')
         with open(fname) as wfile:
             reader = csv.DictReader(wfile, CSV_HEADER)
             for wp in reader:
@@ -52,7 +53,7 @@ class WaypointLoader(object):
                 q = self.quaternion_from_yaw(float(wp['yaw']))
                 p.pose.pose.orientation = Quaternion(*q)
                 p.twist.twist.linear.x = float(self.velocity)
-
+                rospy.logdebug('x = %f, y=%f, yaw=%f, vel=%f', float(wp['x']),float(wp['y']),float(wp['yaw']),p.twist.twist.linear.x)
                 waypoints.append(p)
         return self.decelerate(waypoints)
 
@@ -63,12 +64,15 @@ class WaypointLoader(object):
     def decelerate(self, waypoints):
         last = waypoints[-1]
         last.twist.twist.linear.x = 0.
+        rospy.logdebug('*** from decelerate ***') 
         for wp in waypoints[:-1][::-1]:
             dist = self.distance(wp.pose.pose.position, last.pose.pose.position)
             vel = math.sqrt(2 * MAX_DECEL * dist)
             if vel < 1.:
                 vel = 0.
             wp.twist.twist.linear.x = min(vel, wp.twist.twist.linear.x)
+            rospy.logdebug('x = %f, y=%f, vel=%f', wp.pose.pose.position.x,wp.pose.pose.position.y, wp.twist.twist.linear.x)
+    
         return waypoints
 
     def publish(self, waypoints):
