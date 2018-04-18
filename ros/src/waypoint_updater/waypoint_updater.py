@@ -145,7 +145,7 @@ class WaypointUpdater(object):
             self.waypoint_tree=KDTree(self.waypoints_2d)
 
     def traffic_cb(self, msg):
-  #      rospy.loginfo('got to traffic_cb')
+        rospy.loginfo('got to traffic_cb')
         self.Stopline_wp_idx = msg.data
 
     def obstacle_cb(self, msg):
