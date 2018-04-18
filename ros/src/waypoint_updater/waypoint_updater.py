@@ -2,7 +2,7 @@
 import numpy as np
 import rospy
 from geometry_msgs.msg import PoseStamped
-from styx_msgs.msg import Lane, Waypoint, TrafficLight
+from styx_msgs.msg import Lane, Waypoint
 from scipy.spatial import KDTree
 from std_msgs.msg import Int32
 import math
@@ -97,13 +97,9 @@ class WaypointUpdater(object):
         base_waypoints=self.base_lane.waypoints[closest_idx:farthest_idx]
 
         #if self.Stopline_wp_idx == -1 or (self.Stopline_wp_idx >= farthest_idx):
-        #stop if light is red
-        if self.Stopline_wp_idx == TrafficLight.GREEN or self.Stopline_wp_idx == TrafficLight.UNKNOWN: 
+        if self.Stopline_wp_idx == -1: #stop if light is red
             lane.waypoints=base_waypoints
             self.isStopped = False
-        elif self.Stopline_wp_idx == TrafficLight.YELLOW:
-            if (self.Stopline_wp_idx <= farthest_idx):
-                lane.waypoints=self.decelerate_waypoints(base_waypoints,closest_idx)
         else:
             lane.waypoints=self.decelerate_waypoints(base_waypoints,closest_idx)
 
@@ -145,7 +141,7 @@ class WaypointUpdater(object):
             self.waypoint_tree=KDTree(self.waypoints_2d)
 
     def traffic_cb(self, msg):
-        rospy.loginfo('got to traffic_cb')
+  #      rospy.loginfo('got to traffic_cb')
         self.Stopline_wp_idx = msg.data
 
     def obstacle_cb(self, msg):
