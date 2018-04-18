@@ -2,7 +2,7 @@
 import numpy as np
 import rospy
 from geometry_msgs.msg import PoseStamped
-from styx_msgs.msg import Lane, Waypoint
+from styx_msgs.msg import Lane, Waypoint, TrafficLight
 from scipy.spatial import KDTree
 from std_msgs.msg import Int32
 import math
@@ -22,7 +22,7 @@ as well as to verify your TL classifier.
 TODO (for Yousuf and Aaron): Stopline location for each traffic light.
 '''
 
-LOOKAHEAD_WPS = 20 # Number of waypoints we will publish. You can change this number
+LOOKAHEAD_WPS = 10 # Number of waypoints we will publish. You can change this number
 MAX_DECEL = .5
 
 
@@ -32,7 +32,7 @@ class WaypointUpdater(object):
 
         rospy.Subscriber('/current_pose', PoseStamped, self.pose_cb)
         rospy.Subscriber('/base_waypoints', Lane, self.waypoints_cb)
-        rospy.Subscriber('traffic_waypoint', Int32, self.traffic_cb)
+        rospy.Subscriber('/traffic_waypoint', Int32, self.traffic_cb)
 
         # TODO: Add a subscriber for /traffic_waypoint and /obstacle_waypoint below
 
@@ -46,6 +46,7 @@ class WaypointUpdater(object):
    #     self.base_waypoints=None
         self.waypoints_2d=None
         self.waypoint_tree=None
+        self.isStopped = False
 
         self.loop()
 
@@ -95,8 +96,14 @@ class WaypointUpdater(object):
         farthest_idx=closest_idx+LOOKAHEAD_WPS
         base_waypoints=self.base_lane.waypoints[closest_idx:farthest_idx]
 
-        if self.Stopline_wp_idx == -1 or (self.Stopline_wp_idx >= farthest_idx):
+        #if self.Stopline_wp_idx == -1 or (self.Stopline_wp_idx >= farthest_idx):
+        #stop if light is red
+        if self.Stopline_wp_idx == TrafficLight.GREEN or self.Stopline_wp_idx == TrafficLight.UNKNOWN: 
             lane.waypoints=base_waypoints
+            self.isStopped = False
+        elif self.Stopline_wp_idx == TrafficLight.YELLOW:
+            if (self.Stopline_wp_idx <= farthest_idx):
+                lane.waypoints=self.decelerate_waypoints(base_waypoints,closest_idx)
         else:
             lane.waypoints=self.decelerate_waypoints(base_waypoints,closest_idx)
 
@@ -106,16 +113,21 @@ class WaypointUpdater(object):
         temp=[]
         for i, wp in enumerate(waypoints):
             p=Waypoint()
-            p.pose=wp.pose
-# This the line below
-            stop_idx=max(self.Stopline_wp_idx - closest_idx - 2, 0)
 
-            dist=self.distance(waypoints,i,stop_idx)
-            vel=math.sqrt(2*MAX_DECEL*dist)
-            if vel < 1.:
-                vel=0.
+            if self.isStopped:
+                p.twist.twist.linear.x = 0 #keep stopped
+            else:
+                p.pose=wp.pose
+                stop_idx=max(self.Stopline_wp_idx - closest_idx - 2, 0)
 
-            p.twist.twist.linear.x = min(vel,wp.twist.twist.linear.x)   
+                dist=self.distance(waypoints,i,stop_idx)
+                vel=math.sqrt(2*MAX_DECEL*dist)
+                if vel < 1.:
+                    vel=0.
+                    self.isStopped = True
+
+                p.twist.twist.linear.x = min(vel,wp.twist.twist.linear.x)
+
             temp.append(p) 
 
         return temp        
@@ -149,7 +161,12 @@ class WaypointUpdater(object):
     def distance(self, waypoints, wp1, wp2):
         dist = 0
         dl = lambda a, b: math.sqrt((a.x-b.x)**2 + (a.y-b.y)**2  + (a.z-b.z)**2)
-        for i in range(wp1, wp2+1):
+
+        max_way = wp2+1
+        if(wp2+1 > len(waypoints)):
+            max_way = len(waypoints)
+            
+        for i in range(wp1, max_way):
             dist += dl(waypoints[wp1].pose.pose.position, waypoints[i].pose.pose.position)
             wp1 = i
         return dist
