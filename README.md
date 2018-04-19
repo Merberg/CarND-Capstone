@@ -82,7 +82,16 @@ The system architecture diagram shows ROS nodes and topics used in the project
 
 ### Testing in Simulator
 
+To develop the project, the first step is to run the code in a simulator provided by Udacity. The simulator communicates with the code and reproduce the behavior of Carla (Udacity's Car) in a closed scenario, under control.
+
+![Testing in Simulator](imgs/readme_files/simulator.gif)
+
 ### Testing with Real Data
+
+After running the code in a simulation scenario with fake data, we can increase the complexity and run the code with real data, but under the same simulation. This scenario give us real data and provide a feedback of possible problems the car will face in the real environment. 
+
+![Testing in Simulator](imgs/readme_files/simulator.gif)
+***TODO:*** *Change this image*
 
 ### Running in Real World
 
