@@ -1,0 +1,1014 @@
+- annotations:
+  - {class: Green, x_width: 52.65248226950354, xmin: 130.4964539007092, y_height: 119.60283687943263,
+    ymin: 289.36170212765956}
+  - {class: Green, x_width: 50.156028368794296, xmin: 375.60283687943263, y_height: 121.87234042553195,
+    ymin: 293.90070921985813}
+  - {class: Green, x_width: 53.33333333333326, xmin: 623.6595744680851, y_height: 119.82978723404256,
+    ymin: 297.7588652482269}
+  class: image
+  filename: ./sim_data_capture/left0003.jpg
+- annotations:
+  - {class: Yellow, x_width: 48.0, xmin: 130.24, y_height: 120.32, ymin: 288.32}
+  - {class: Yellow, x_width: 47.039999999999964, xmin: 377.6, y_height: 115.51999999999998,
+    ymin: 294.72}
+  - {class: Yellow, x_width: 48.319999999999936, xmin: 625.6, y_height: 119.04000000000002,
+    ymin: 299.52}
+  class: image
+  filename: ./sim_data_capture/left0011.jpg
+- annotations:
+  - {class: Yellow, x_width: 51.519999999999996, xmin: 127.04, y_height: 119.68, ymin: 289.28000000000003}
+  - {class: Yellow, x_width: 53.75999999999999, xmin: 375.36, y_height: 125.76000000000005,
+    ymin: 291.2}
+  - {class: Yellow, x_width: 53.75999999999999, xmin: 624.0, y_height: 121.27999999999997,
+    ymin: 297.28000000000003}
+  class: image
+  filename: ./sim_data_capture/left0012.jpg
+- annotations:
+  - {class: Yellow, x_width: 47.360000000000014, xmin: 126.72, y_height: 121.92000000000002,
+    ymin: 285.44}
+  - {class: Yellow, x_width: 50.56, xmin: 376.32, y_height: 122.24000000000001, ymin: 291.2}
+  - {class: Yellow, x_width: 54.40000000000009, xmin: 625.92, y_height: 124.15999999999997,
+    ymin: 294.72}
+  class: image
+  filename: ./sim_data_capture/left0013.jpg
+- annotations:
+  - {class: Yellow, x_width: 51.20000000000002, xmin: 126.72, y_height: 127.67999999999995,
+    ymin: 286.40000000000003}
+  - {class: Yellow, x_width: 55.68000000000001, xmin: 372.48, y_height: 125.75999999999999,
+    ymin: 289.28000000000003}
+  - {class: Yellow, x_width: 51.84000000000003, xmin: 625.28, y_height: 123.51999999999998,
+    ymin: 292.8}
+  class: image
+  filename: ./sim_data_capture/left0014.jpg
+- annotations:
+  - {class: Yellow, x_width: 51.20000000000002, xmin: 124.16, y_height: 122.56, ymin: 280.0}
+  - {class: Yellow, x_width: 54.71999999999997, xmin: 374.40000000000003, y_height: 124.16000000000003,
+    ymin: 284.8}
+  - {class: Yellow, x_width: 53.75999999999999, xmin: 630.72, y_height: 126.08000000000004,
+    ymin: 288.32}
+  class: image
+  filename: ./sim_data_capture/left0015.jpg
+- annotations:
+  - {class: Yellow, x_width: 49.920000000000016, xmin: 122.88, y_height: 124.80000000000001,
+    ymin: 277.76}
+  - {class: Yellow, x_width: 52.65248226950354, xmin: 375.3758865248227, y_height: 124.36879432624113,
+    ymin: 283.0070921985816}
+  - {class: Yellow, x_width: 53.33333333333326, xmin: 631.6028368794326, y_height: 124.36879432624113,
+    ymin: 287.7730496453901}
+  class: image
+  filename: ./sim_data_capture/left0016.jpg
+- annotations:
+  - {class: Yellow, x_width: 51.38211382113819, xmin: 120.32520325203252, y_height: 127.47967479674793,
+    ymin: 273.1707317073171}
+  - {class: Yellow, x_width: 51.382113821138205, xmin: 377.8861788617886, y_height: 128.130081300813,
+    ymin: 279.0243902439024}
+  - {class: Yellow, x_width: 53.008130081300806, xmin: 634.7967479674796, y_height: 124.22764227642273,
+    ymin: 284.5528455284553}
+  class: image
+  filename: ./sim_data_capture/left0017.jpg
+- annotations:
+  - {class: Yellow, x_width: 51.20000000000002, xmin: 117.44, y_height: 126.71999999999997,
+    ymin: 270.72}
+  - {class: Yellow, x_width: 50.879999999999995, xmin: 378.88, y_height: 125.75999999999999,
+    ymin: 274.88}
+  - {class: Yellow, x_width: 54.08000000000004, xmin: 639.04, y_height: 128.64, ymin: 278.40000000000003}
+  class: image
+  filename: ./sim_data_capture/left0018.jpg
+- annotations:
+  - {class: Yellow, x_width: 53.760000000000005, xmin: 112.32000000000001, y_height: 125.44,
+    ymin: 263.68}
+  - {class: Yellow, x_width: 52.80000000000001, xmin: 378.24, y_height: 129.60000000000002,
+    ymin: 268.8}
+  - {class: Yellow, x_width: 52.799999999999955, xmin: 642.5600000000001, y_height: 129.28000000000003,
+    ymin: 269.76}
+  class: image
+  filename: ./sim_data_capture/left0019.jpg
+- annotations:
+  - {class: Yellow, x_width: 52.16000000000001, xmin: 110.08, y_height: 128.96000000000004,
+    ymin: 259.2}
+  - {class: Yellow, x_width: 51.52000000000004, xmin: 379.52, y_height: 129.27999999999997,
+    ymin: 262.72}
+  - {class: Yellow, x_width: 58.24000000000001, xmin: 645.44, y_height: 133.12, ymin: 266.24}
+  class: image
+  filename: ./sim_data_capture/left0020.jpg
+- annotations:
+  - {class: Yellow, x_width: 54.08, xmin: 108.48, y_height: 130.24, ymin: 259.2}
+  - {class: Yellow, x_width: 55.360000000000014, xmin: 376.64, y_height: 131.2, ymin: 262.72}
+  - {class: Yellow, x_width: 55.360000000000014, xmin: 647.04, y_height: 131.83999999999997,
+    ymin: 267.84000000000003}
+  class: image
+  filename: ./sim_data_capture/left0021.jpg
+- annotations:
+  - {class: Yellow, x_width: 55.68000000000001, xmin: 104.0, y_height: 134.72000000000003,
+    ymin: 250.56}
+  - {class: Yellow, x_width: 58.24000000000001, xmin: 376.96, y_height: 133.76000000000002,
+    ymin: 254.4}
+  - {class: Yellow, x_width: 56.960000000000036, xmin: 652.48, y_height: 135.36, ymin: 258.88}
+  class: image
+  filename: ./sim_data_capture/left0022.jpg
+- annotations:
+  - {class: Yellow, x_width: 59.52000000000001, xmin: 95.68, y_height: 135.04000000000002,
+    ymin: 240.32}
+  - {class: Yellow, x_width: 56.639999999999986, xmin: 378.24, y_height: 135.04000000000002,
+    ymin: 245.76}
+  - {class: Yellow, x_width: 59.520000000000095, xmin: 660.16, y_height: 137.60000000000002,
+    ymin: 250.56}
+  class: image
+  filename: ./sim_data_capture/left0023.jpg
+- annotations:
+  - {class: Red, x_width: 55.68000000000001, xmin: 92.16, y_height: 140.48, ymin: 227.84}
+  - {class: Red, x_width: 60.80000000000001, xmin: 378.56, y_height: 144.32, ymin: 229.12}
+  - {class: Red, x_width: 62.72000000000003, xmin: 667.84, y_height: 146.24, ymin: 234.88}
+  class: image
+  filename: ./sim_data_capture/left0024.jpg
+- annotations:
+  - {class: Red, x_width: 64.00000000000001, xmin: 83.52, y_height: 140.8, ymin: 224.0}
+  - {class: Red, x_width: 56.31999999999999, xmin: 379.84000000000003, y_height: 140.16,
+    ymin: 230.08}
+  - {class: Red, x_width: 59.520000000000095, xmin: 673.28, y_height: 140.8, ymin: 233.92000000000002}
+  class: image
+  filename: ./sim_data_capture/left0025.jpg
+- annotations:
+  - {class: Red, x_width: 10.511967241681376, xmin: 65.17419689842451, y_height: 21.979567868970094,
+    ymin: 571.0865112389808}
+  - {class: Red, x_width: 9.747460533195465, xmin: 109.70671266772924, y_height: 23.12632793169894,
+    ymin: 571.0865112389808}
+  class: image
+  filename: ./sim_data_capture/left0451.jpg
+- annotations:
+  - {class: Red, x_width: 10.511967241681361, xmin: 66.89433699251784, y_height: 21.406187837605785,
+    ymin: 570.7042578847378}
+  - {class: Red, x_width: 10.511967241681376, xmin: 112.57361282455143, y_height: 23.317454608820526,
+    ymin: 570.7042578847378}
+  class: image
+  filename: ./sim_data_capture/left0452.jpg
+- annotations:
+  - {class: Red, x_width: 10.511967241681361, xmin: 66.89433699251784, y_height: 21.979567868970094,
+    ymin: 568.792991113523}
+  - {class: Red, x_width: 11.085347273045812, xmin: 112.000232793187, y_height: 20.641681129119775,
+    ymin: 572.8066513330741}
+  class: image
+  filename: ./sim_data_capture/left0453.jpg
+- annotations:
+  - {class: Red, x_width: 10.894220595924338, xmin: 67.08546366963931, y_height: 23.126327931699052,
+    ymin: 568.6018644364016}
+  - {class: Red, x_width: 11.467600627288775, xmin: 113.14699285591587, y_height: 22.935201254577578,
+    ymin: 569.7486244991304}
+  class: image
+  filename: ./sim_data_capture/left0454.jpg
+- annotations:
+  - {class: Red, x_width: 10.511967241681376, xmin: 104.54629238544929, y_height: 22.744074577456104,
+    ymin: 569.3663711448875}
+  - {class: Red, x_width: 10.320840564559887, xmin: 153.28359505142657, y_height: 23.317454608820412,
+    ymin: 571.0865112389808}
+  class: image
+  filename: ./sim_data_capture/left0455.jpg
+- annotations:
+  - {class: Red, x_width: 9.174080501831014, xmin: 105.31079909393522, y_height: 22.74407457745599,
+    ymin: 568.4107377592801}
+  - {class: Red, x_width: 10.129713887438413, xmin: 153.28359505142657, y_height: 23.126327931699052,
+    ymin: 570.1308778533734}
+  class: image
+  filename: ./sim_data_capture/left0456.jpg
+- annotations:
+  - {class: Red, x_width: 8.791827147588037, xmin: 275.98692176341643, y_height: 21.597314514727145,
+    ymin: 573.57115804156}
+  - {class: Red, x_width: 8.791827147588037, xmin: 323.9597177209078, y_height: 21.788441191848733,
+    ymin: 574.5267914271674}
+  class: image
+  filename: ./sim_data_capture/left0457.jpg
+- annotations:
+  - {class: Red, x_width: 10.703093918802836, xmin: 304.0825433002739, y_height: 22.74407457745599,
+    ymin: 571.6598912703453}
+  - {class: Red, x_width: 9.938587210316939, xmin: 352.8198459662512, y_height: 22.935201254577464,
+    ymin: 572.0421446245882}
+  - {class: Red, x_width: 11.276473950167258, xmin: 401.1748952779855, y_height: 20.068301097755352,
+    ymin: 575.4824248127749}
+  class: image
+  filename: ./sim_data_capture/left0458.jpg
+- annotations:
+  - {class: Red, x_width: 10.320840564559887, xmin: 306.1849367486102, y_height: 23.89083464018495,
+    ymin: 571.8510179474667}
+  - {class: Red, x_width: 12.805487367139165, xmin: 351.4819592264008, y_height: 21.979567868970094,
+    ymin: 572.6155246559526}
+  - {class: Red, x_width: 11.849853981531737, xmin: 400.98376860086404, y_height: 21.78844119184862,
+    ymin: 573.3800313644385}
+  class: image
+  filename: ./sim_data_capture/left0459.jpg
+- annotations:
+  - {class: Red, x_width: 11.467600627288789, xmin: 337.91196515077576, y_height: 24.655341348670845,
+    ymin: 570.3220045304948}
+  - {class: Red, x_width: 12.423234012896216, xmin: 386.0758877853886, y_height: 23.317454608820412,
+    ymin: 571.4687645932238}
+  - {class: Red, x_width: 11.276473950167315, xmin: 435.95995051409477, y_height: 23.508581285942,
+    ymin: 572.9977780101956}
+  class: image
+  filename: ./sim_data_capture/left0460.jpg
+- annotations:
+  - {class: Red, x_width: 12.996614044260639, xmin: 367.91885345884805, y_height: 23.508581285942,
+    ymin: 569.175244467766}
+  - {class: Red, x_width: 10.320840564559887, xmin: 418.37629621891864, y_height: 24.081961317306423,
+    ymin: 571.2776379161023}
+  - {class: Red, x_width: 9.36520717895246, xmin: 469.21599233323224, y_height: 25.228721380035267,
+    ymin: 571.2776379161023}
+  class: image
+  filename: ./sim_data_capture/left0461.jpg
+- annotations:
+  - {class: Red, x_width: 11.08534727304584, xmin: 373.46152709537097, y_height: 23.317454608820526,
+    ymin: 568.4107377592801}
+  - {class: Red, x_width: 14.143374106989484, xmin: 423.15446314695566, y_height: 25.419848057156855,
+    ymin: 570.7042578847378}
+  - {class: Red, x_width: 13.569994075625061, xmin: 472.6562725214188, y_height: 22.170694546091568,
+    ymin: 572.4243979788312}
+  class: image
+  filename: ./sim_data_capture/left0462.jpg
+- annotations:
+  - {class: Red, x_width: 10.511967241681361, xmin: 378.8130740547724, y_height: 24.46421467154937,
+    ymin: 569.175244467766}
+  - {class: Red, x_width: 10.320840564559887, xmin: 430.0350235233289, y_height: 24.081961317306423,
+    ymin: 570.5131312076163}
+  - {class: Red, x_width: 9.747460533195408, xmin: 481.4480996690069, y_height: 23.317454608820526,
+    ymin: 572.4243979788312}
+  class: image
+  filename: ./sim_data_capture/left0463.jpg
+- annotations:
+  - {class: Red, x_width: 10.89422059592431, xmin: 358.93589963413854, y_height: 25.037594702913793,
+    ymin: 567.8373577279157}
+  - {class: Red, x_width: 9.938587210316939, xmin: 411.4957358425454, y_height: 22.55294790033463,
+    ymin: 569.5574978220089}
+  - {class: Red, x_width: 11.276473950167315, xmin: 460.8064185398871, y_height: 22.170694546091568,
+    ymin: 572.4243979788312}
+  class: image
+  filename: ./sim_data_capture/left0464.jpg
+- annotations:
+  - {class: Red, x_width: 11.467600627288732, xmin: 321.85732427257153, y_height: 24.081961317306423,
+    ymin: 566.8817243423082}
+  - {class: Red, x_width: 9.556333856073934, xmin: 374.60828715809987, y_height: 25.228721380035267,
+    ymin: 568.4107377592801}
+  - {class: Red, x_width: 9.55633385607399, xmin: 425.83023662665636, y_height: 23.508581285942,
+    ymin: 569.9397511762519}
+  class: image
+  filename: ./sim_data_capture/left0465.jpg
+- annotations:
+  - {class: Red, x_width: 11.08534727304584, xmin: 282.6763554626682, y_height: 23.699707963063474,
+    ymin: 564.9704575710934}
+  - {class: Red, x_width: 12.040980658653211, xmin: 335.23619167107506, y_height: 23.317454608820526,
+    ymin: 566.6905976651867}
+  - {class: Red, x_width: 13.37886739850353, xmin: 386.84039449387456, y_height: 24.84646802579232,
+    ymin: 567.6462310507942}
+  class: image
+  filename: ./sim_data_capture/left0466.jpg
+- annotations:
+  - {class: Red, x_width: 9.55633385607399, xmin: 275.98692176341643, y_height: 25.228721380035267,
+    ymin: 563.4414441541217}
+  - {class: Red, x_width: 12.805487367139108, xmin: 327.01774455485145, y_height: 26.5666081198857,
+    ymin: 565.5438376024579}
+  - {class: Red, x_width: 11.467600627288789, xmin: 379.19532740901536, y_height: 30.198014985193822,
+    ymin: 565.5438376024579}
+  class: image
+  filename: ./sim_data_capture/left0467.jpg
+- annotations:
+  - {class: Red, x_width: 11.658727304410206, xmin: 265.47495452173507, y_height: 22.36182122321304,
+    ymin: 563.6325708312431}
+  - {class: Red, x_width: 11.658727304410263, xmin: 319.7549308242352, y_height: 28.095621536857493,
+    ymin: 563.2503174770002}
+  - {class: Red, x_width: 12.805487367139108, xmin: 371.3591336470347, y_height: 23.126327931699052,
+    ymin: 565.7349642795793}
+  class: image
+  filename: ./sim_data_capture/left0468.jpg
+- annotations:
+  - {class: Red, x_width: 12.614360690017634, xmin: 256.30087401990403, y_height: 24.46421467154937,
+    ymin: 561.5301773829068}
+  - {class: Red, x_width: 13.761120752746535, xmin: 309.05183690543237, y_height: 25.802101411399804,
+    ymin: 562.8680641227571}
+  - {class: Red, x_width: 12.423234012896216, xmin: 363.905193239297, y_height: 25.80210141139969,
+    ymin: 564.397077539729}
+  class: image
+  filename: ./sim_data_capture/left0469.jpg
+- annotations:
+  - {class: Red, x_width: 13.187740721382085, xmin: 251.33158041474556, y_height: 25.80210141139969,
+    ymin: 560.5745439972994}
+  - {class: Red, x_width: 12.423234012896216, xmin: 305.6115567172457, y_height: 23.126327931699052,
+    ymin: 562.8680641227571}
+  - {class: Red, x_width: 12.996614044260639, xmin: 359.70040634262443, y_height: 23.89083464018495,
+    ymin: 564.779330893972}
+  class: image
+  filename: ./sim_data_capture/left0470.jpg
+- annotations:
+  - {class: Red, x_width: 11.658727304410235, xmin: 246.74454016383007, y_height: 27.331114828371597,
+    ymin: 560.5745439972994}
+  - {class: Red, x_width: 11.276473950167315, xmin: 301.59789649769465, y_height: 27.139988151250122,
+    ymin: 562.2946840913927}
+  - {class: Red, x_width: 10.894220595924367, xmin: 355.87787280019484, y_height: 24.655341348670845,
+    ymin: 564.5882042168505}
+  class: image
+  filename: ./sim_data_capture/left0471.jpg
+- annotations:
+  - {class: Red, x_width: 10.894220595924338, xmin: 244.64214671549377, y_height: 25.993228088521278,
+    ymin: 557.8987705175987}
+  - {class: Red, x_width: 12.42323401289616, xmin: 299.3043763722369, y_height: 23.89083464018495,
+    ymin: 562.4858107685142}
+  - {class: Red, x_width: 12.42323401289616, xmin: 354.92223941458747, y_height: 25.22872138003538,
+    ymin: 562.1035574142712}
+  class: image
+  filename: ./sim_data_capture/left0472.jpg
+- annotations:
+  - {class: Red, x_width: 9.556333856073962, xmin: 243.11313329852194, y_height: 23.89083464018495,
+    ymin: 559.6189106116921}
+  - {class: Red, x_width: 12.040980658653211, xmin: 298.539869663751, y_height: 25.22872138003538,
+    ymin: 561.9124307371497}
+  - {class: Red, x_width: 13.187740721382113, xmin: 353.77547935185856, y_height: 25.80210141139969,
+    ymin: 564.2059508626076}
+  class: image
+  filename: ./sim_data_capture/left0473.jpg
+- annotations:
+  - {class: Red, x_width: 12.805487367139136, xmin: 240.05510646457827, y_height: 23.699707963063474,
+    ymin: 560.1922906430565}
+  - {class: Red, x_width: 12.805487367139165, xmin: 295.29071615268583, y_height: 26.375481442764112,
+    ymin: 560.001163965935}
+  - {class: Red, x_width: 11.08534727304584, xmin: 353.5843526747371, y_height: 27.90449485973602,
+    ymin: 562.2946840913927}
+  class: image
+  filename: ./sim_data_capture/left0474.jpg
+- annotations:
+  - {class: Red, x_width: 12.232107335774685, xmin: 236.23257292214868, y_height: 23.89083464018495,
+    ymin: 558.854403903206}
+  - {class: Red, x_width: 12.996614044260582, xmin: 293.57057605859256, y_height: 23.126327931699052,
+    ymin: 560.383417320178}
+  - {class: Red, x_width: 14.90788081547538, xmin: 353.01097264337267, y_height: 27.713368182614545,
+    ymin: 561.9124307371497}
+  class: image
+  filename: ./sim_data_capture/left0475.jpg
+- annotations:
+  - {class: Red, x_width: 14.52562746123246, xmin: 234.32130615093388, y_height: 30.389141662315183,
+    ymin: 555.0318703607766}
+  - {class: Red, x_width: 12.040980658653211, xmin: 294.143956089957, y_height: 30.389141662315296,
+    ymin: 557.3253904862343}
+  - {class: Red, x_width: 14.334500784110958, xmin: 349.7618191323075, y_height: 31.727028402165615,
+    ymin: 558.0898971947202}
+  class: image
+  filename: ./sim_data_capture/left0476.jpg
+- annotations:
+  - {class: Red, x_width: 14.143374106989484, xmin: 233.74792611956946, y_height: 29.051254922464864,
+    ymin: 556.1786304235054}
+  - {class: Red, x_width: 12.040980658653211, xmin: 293.9528294128355, y_height: 32.6826617877731,
+    ymin: 554.6496170065335}
+  - {class: Red, x_width: 13.378867398503587, xmin: 351.6730859035223, y_height: 29.24238159958645,
+    ymin: 558.854403903206}
+  class: image
+  filename: ./sim_data_capture/left0477.jpg
+- annotations:
+  - {class: Red, x_width: 16.05464087820428, xmin: 230.68989928562578, y_height: 28.669001568221915,
+    ymin: 554.0762369751691}
+  - {class: Red, x_width: 14.334500784110958, xmin: 291.65930928737777, y_height: 29.624634953829286,
+    ymin: 555.7963770692625}
+  - {class: Red, x_width: 13.378867398503587, xmin: 351.4819592264008, y_height: 31.344775047922667,
+    ymin: 555.9875037463839}
+  class: image
+  filename: ./sim_data_capture/left0478.jpg
+- annotations:
+  - {class: Red, x_width: 14.52562746123246, xmin: 230.49877260850428, y_height: 28.47787489110044,
+    ymin: 553.1206035895617}
+  - {class: Red, x_width: 16.628020909568704, xmin: 289.5569158390415, y_height: 31.727028402165615,
+    ymin: 554.0762369751691}
+  - {class: Red, x_width: 12.040980658653211, xmin: 351.6730859035223, y_height: 29.433508276707812,
+    ymin: 557.1342638091128}
+  class: image
+  filename: ./sim_data_capture/left0479.jpg
+- annotations:
+  - {class: Red, x_width: 14.52562746123246, xmin: 229.3520125457754, y_height: 29.242381599586338,
+    ymin: 552.5472235581973}
+  - {class: Red, x_width: 13.569994075625061, xmin: 290.70367590177034, y_height: 29.433508276707812,
+    ymin: 553.5028569438047}
+  - {class: Red, x_width: 14.334500784110958, xmin: 350.335199163672, y_height: 27.52224150549307,
+    ymin: 557.5165171633557}
+  class: image
+  filename: ./sim_data_capture/left0480.jpg
+- annotations:
+  - {class: Red, x_width: 13.569994075625061, xmin: 227.4407457745606, y_height: 30.198014985193822,
+    ymin: 548.9158166928892}
+  - {class: Red, x_width: 15.672387523961333, xmin: 288.2190290991911, y_height: 31.727028402165615,
+    ymin: 551.5915901725899}
+  - {class: Red, x_width: 15.290134169718385, xmin: 349.18843910094307, y_height: 29.433508276707812,
+    ymin: 555.9875037463839}
+  class: image
+  filename: ./sim_data_capture/left0481.jpg
+- annotations:
+  - {class: Red, x_width: 19.112667712147953, xmin: 221.51581878379477, y_height: 32.30040843353004,
+    ymin: 547.5779299530388}
+  - {class: Red, x_width: 15.099007492596911, xmin: 286.88114235934074, y_height: 29.433508276707926,
+    ymin: 550.062576755618}
+  - {class: Red, x_width: 14.334500784111015, xmin: 349.95294580942897, y_height: 29.6246349538294,
+    ymin: 553.6939836209261}
+  class: image
+  filename: ./sim_data_capture/left0482.jpg
+- annotations:
+  - {class: Red, x_width: 15.099007492596883, xmin: 223.23595887788807, y_height: 32.682661787772986,
+    ymin: 547.1956765987959}
+  - {class: Red, x_width: 12.614360690017634, xmin: 287.83677574494817, y_height: 31.344775047922667,
+    ymin: 549.1069433700106}
+  - {class: Red, x_width: 15.672387523961333, xmin: 348.8061857467001, y_height: 33.25604181913752,
+    ymin: 550.062576755618}
+  class: image
+  filename: ./sim_data_capture/left0483.jpg
+- annotations:
+  - {class: Red, x_width: 15.672387523961305, xmin: 220.56018539818737, y_height: 34.21167520474478,
+    ymin: 543.7553964106093}
+  - {class: Red, x_width: 15.481260846839803, xmin: 285.7343822966119, y_height: 33.829421850501944,
+    ymin: 546.4311698903099}
+  - {class: Red, x_width: 15.863514201082808, xmin: 349.37956577806455, y_height: 31.153648370801193,
+    ymin: 548.7246900157677}
+  class: image
+  filename: ./sim_data_capture/left0484.jpg
+- annotations:
+  - {class: Red, x_width: 15.290134169718385, xmin: 218.2666652727296, y_height: 33.06491514201605,
+    ymin: 542.4175096707588}
+  - {class: Red, x_width: 14.525627461232432, xmin: 284.0142422025186, y_height: 32.682661787772986,
+    ymin: 545.0932831504596}
+  - {class: Red, x_width: 16.05464087820428, xmin: 349.37956577806455, y_height: 33.44716849625888,
+    ymin: 547.0045499216744}
+  class: image
+  filename: ./sim_data_capture/left0485.jpg
+- annotations:
+  - {class: Red, x_width: 16.245767555325756, xmin: 217.69328524136517, y_height: 34.40280188186625,
+    ymin: 540.1239895453011}
+  - {class: Red, x_width: 14.525627461232432, xmin: 283.6319888482756, y_height: 32.682661787772986,
+    ymin: 543.5642697334878}
+  - {class: Red, x_width: 16.05464087820428, xmin: 347.6594256839712, y_height: 31.344775047922667,
+    ymin: 547.9601833072818}
+  class: image
+  filename: ./sim_data_capture/left0486.jpg
+- annotations:
+  - {class: Red, x_width: 15.290134169718357, xmin: 216.16427182439332, y_height: 33.63829517338036,
+    ymin: 541.0796229309085}
+  - {class: Red, x_width: 14.334500784110958, xmin: 281.14734204569635, y_height: 35.35843526747374,
+    ymin: 541.8441296393944}
+  - {class: Red, x_width: 17.01027426381171, xmin: 347.46829900684975, y_height: 33.064915142015934,
+    ymin: 544.7110297962166}
+  class: image
+  filename: ./sim_data_capture/left0487.jpg
+- annotations:
+  - {class: Red, x_width: 17.58365429517613, xmin: 211.00385154211338, y_height: 34.785055236109315,
+    ymin: 538.4038494512077}
+  - {class: Red, x_width: 15.099007492596911, xmin: 281.3384687228178, y_height: 32.682661787772986,
+    ymin: 540.888496253787}
+  - {class: Red, x_width: 12.805487367139108, xmin: 350.52632584079345, y_height: 37.26970203868848,
+    ymin: 539.5506095139367}
+  class: image
+  filename: ./sim_data_capture/left0488.jpg
+- annotations:
+  - {class: Red, x_width: 13.761120752746507, xmin: 211.38610489635636, y_height: 33.25604181913741,
+    ymin: 536.6837093571145}
+  - {class: Red, x_width: 17.010274263811652, xmin: 278.2804418888742, y_height: 35.35843526747374,
+    ymin: 537.6393427427219}
+  - {class: Red, x_width: 13.95224742986801, xmin: 349.570692455186, y_height: 34.21167520474489,
+    ymin: 540.888496253787}
+  class: image
+  filename: ./sim_data_capture/left0489.jpg
+- annotations:
+  - {class: Red, x_width: 16.05464087820428, xmin: 209.09258477089858, y_height: 35.54956194459521,
+    ymin: 535.9192026486286}
+  - {class: Red, x_width: 16.628020909568704, xmin: 278.47156856599565, y_height: 33.82942185050183,
+    ymin: 539.3594828368152}
+  - {class: Red, x_width: 14.716754138353906, xmin: 348.61505906957865, y_height: 35.740688621716686,
+    ymin: 540.6973695766656}
+  class: image
+  filename: ./sim_data_capture/left0490.jpg
+- annotations:
+  - {class: Red, x_width: 17.01027426381168, xmin: 206.9901913225623, y_height: 35.358435267473624,
+    ymin: 535.5369492943856}
+  - {class: Red, x_width: 15.48126084683986, xmin: 279.427201951603, y_height: 35.740688621716686,
+    ymin: 536.492582679993}
+  - {class: Red, x_width: 14.525627461232489, xmin: 347.6594256839712, y_height: 38.98984213278186,
+    ymin: 537.8304694198433}
+  class: image
+  filename: ./sim_data_capture/left0491.jpg
+- annotations:
+  - {class: Red, x_width: 17.01027426381168, xmin: 204.1232911657401, y_height: 37.26970203868848,
+    ymin: 533.2434291689278}
+  - {class: Red, x_width: 18.348161003662028, xmin: 275.98692176341643, y_height: 38.6075887785388,
+    ymin: 535.3458226172642}
+  - {class: Red, x_width: 15.672387523961277, xmin: 348.4239323924572, y_height: 36.69632200732417,
+    ymin: 538.4038494512077}
+  class: image
+  filename: ./sim_data_capture/left0492.jpg
+- annotations:
+  - {class: Red, x_width: 16.81914758669018, xmin: 202.5942777487683, y_height: 37.26970203868859,
+    ymin: 530.1854023349841}
+  - {class: Red, x_width: 15.099007492596854, xmin: 275.6046684091735, y_height: 35.16730859035226,
+    ymin: 534.5813159087782}
+  - {class: Red, x_width: 14.525627461232432, xmin: 348.8061857467001, y_height: 35.54956194459521,
+    ymin: 536.6837093571145}
+  class: image
+  filename: ./sim_data_capture/left0493.jpg
+- annotations:
+  - {class: Red, x_width: 16.628020909568704, xmin: 199.53625091482462, y_height: 39.56322216414628,
+    ymin: 528.8475155951338}
+  - {class: Red, x_width: 16.81914758669018, xmin: 273.88452831508016, y_height: 38.79871545566027,
+    ymin: 531.3321623977131}
+  - {class: Red, x_width: 16.05464087820428, xmin: 348.2328057153357, y_height: 37.07857536156712,
+    ymin: 534.5813159087782}
+  class: image
+  filename: ./sim_data_capture/left0494.jpg
+- annotations:
+  - {class: Red, x_width: 16.43689423244723, xmin: 197.8161108207313, y_height: 34.21167520474489,
+    ymin: 529.6120223036197}
+  - {class: Red, x_width: 17.58365429517613, xmin: 272.5466415752298, y_height: 35.740688621716686,
+    ymin: 529.9942756578627}
+  - {class: Red, x_width: 14.143374106989484, xmin: 349.18843910094307, y_height: 33.25604181913752,
+    ymin: 534.3901892316567}
+  class: image
+  filename: ./sim_data_capture/left0495.jpg
+- annotations:
+  - {class: Red, x_width: 16.628020909568704, xmin: 155.0037351455199, y_height: 34.7850552361092,
+    ymin: 526.7451221467976}
+  - {class: Red, x_width: 19.877174420633878, xmin: 229.3520125457754, y_height: 36.50519533020258,
+    ymin: 528.2741355637694}
+  - {class: Red, x_width: 16.628020909568704, xmin: 308.8607102283109, y_height: 37.46082871580995,
+    ymin: 531.714415751956}
+  class: image
+  filename: ./sim_data_capture/left0496.jpg
+- annotations:
+  - {class: Red, x_width: 17.392527618054658, xmin: 134.55318069352157, y_height: 39.94547551838923,
+    ymin: 523.304841958611}
+  - {class: Red, x_width: 14.525627461232432, xmin: 215.39976511590743, y_height: 35.35843526747374,
+    ymin: 525.5983620840686}
+  - {class: Red, x_width: 13.761120752746535, xmin: 293.18832270434956, y_height: 33.829421850501944,
+    ymin: 529.8031489807412}
+  class: image
+  filename: ./sim_data_capture/left0497.jpg
+- annotations:
+  - {class: Red, x_width: 16.054640878204268, xmin: 124.61459348320464, y_height: 36.122941975959634,
+    ymin: 524.6427286984613}
+  - {class: Red, x_width: 15.672387523961305, xmin: 202.40315107164682, y_height: 36.696322007324056,
+    ymin: 525.0249820527042}
+  - {class: Red, x_width: 14.716754138353963, xmin: 280.9562153685749, y_height: 40.70998222687513,
+    ymin: 527.5096288552835}
+  class: image
+  filename: ./sim_data_capture/left0498.jpg
+- annotations:
+  - {class: Red, x_width: 19.877174420633878, xmin: 103.01727896847746, y_height: 37.46082871580995,
+    ymin: 519.8645617704243}
+  - {class: Red, x_width: 16.819147586690207, xmin: 185.5840034849566, y_height: 42.43012232096851,
+    ymin: 521.3935751873961}
+  - {class: Red, x_width: 15.099007492596911, xmin: 267.19509461582834, y_height: 38.798715455660385,
+    ymin: 526.553995469676}
+  class: image
+  filename: ./sim_data_capture/left0499.jpg
+- annotations:
+  - {class: Red, x_width: 18.539287680783502, xmin: 91.16742498694573, y_height: 36.50519533020258,
+    ymin: 517.9532949992094}
+  - {class: Red, x_width: 16.43689423244723, xmin: 174.30752953478932, y_height: 40.9011089039966,
+    ymin: 520.6290684789102}
+  - {class: Red, x_width: 17.58365429517613, xmin: 254.19848057156776, y_height: 41.28336225823955,
+    ymin: 523.8782219899754}
+  class: image
+  filename: ./sim_data_capture/left0500.jpg
+- annotations:
+  - {class: Red, x_width: 21.02393448336275, xmin: 80.84658442238583, y_height: 39.180968809903334,
+    ymin: 514.1307614567799}
+  - {class: Red, x_width: 17.39252761805463, xmin: 167.42696915841606, y_height: 38.79871545566027,
+    ymin: 519.1000550619384}
+  - {class: Red, x_width: 16.628020909568704, xmin: 249.9936936748952, y_height: 39.754348841267756,
+    ymin: 519.6734350933028}
+  class: image
+  filename: ./sim_data_capture/left0501.jpg
+- annotations:
+  - {class: Red, x_width: 15.481260846839845, xmin: 78.74419097404956, y_height: 42.430122320968394,
+    ymin: 512.4106213626866}
+  - {class: Red, x_width: 16.245767555325756, xmin: 163.2221822617435, y_height: 38.60758877853891,
+    ymin: 516.6154082593591}
+  - {class: Red, x_width: 17.010274263811652, xmin: 246.17116013246562, y_height: 41.09223558111819,
+    ymin: 518.3355483534524}
+  class: image
+  filename: ./sim_data_capture/left0502.jpg
+- annotations:
+  - {class: Red, x_width: 19.112667712147953, xmin: 71.29025056631185, y_height: 44.15026241506172,
+    ymin: 510.3082279143503}
+  - {class: Red, x_width: 18.157034326540554, xmin: 156.7238752396132, y_height: 41.092235581118075,
+    ymin: 513.7485081025369}
+  - {class: Red, x_width: 19.4949210663909, xmin: 241.5841198815501, y_height: 43.003502352332816,
+    ymin: 515.6597748737518}
+  class: image
+  filename: ./sim_data_capture/left0503.jpg
+- annotations:
+  - {class: Red, x_width: 18.539287680783517, xmin: 104.35516570832782, y_height: 43.76800906081883,
+    ymin: 508.97034117449994}
+  - {class: Red, x_width: 18.730414357905005, xmin: 191.89118382996543, y_height: 40.51885554975365,
+    ymin: 513.1751280711725}
+  - {class: Red, x_width: 17.58365429517613, xmin: 278.47156856599565, y_height: 43.57688238369724,
+    ymin: 515.2775215195088}
+  class: image
+  filename: ./sim_data_capture/left0504.jpg
+- annotations:
+  - {class: Red, x_width: 18.92154103502648, xmin: 153.66584840566952, y_height: 46.25265586339799,
+    ymin: 508.20583446601404}
+  - {class: Red, x_width: 19.686047743512404, xmin: 240.05510646457827, y_height: 46.826035894762526,
+    ymin: 509.1614678516214}
+  - {class: Red, x_width: 21.78844119184862, xmin: 326.0621111692441, y_height: 43.76800906081883,
+    ymin: 513.7485081025369}
+  class: image
+  filename: ./sim_data_capture/left0505.jpg
+- annotations:
+  - {class: Red, x_width: 21.97956786897015, xmin: 180.61470987979814, y_height: 43.38575570657588,
+    ymin: 509.3525945287429}
+  - {class: Red, x_width: 18.921541035026507, xmin: 270.635374804015, y_height: 45.1058958006692,
+    ymin: 510.88160794571473}
+  - {class: Red, x_width: 24.655341348670902, xmin: 355.87787280019484, y_height: 46.061529186276516,
+    ymin: 512.0283680084436}
+  class: image
+  filename: ./sim_data_capture/left0506.jpg
+- annotations:
+  - {class: Red, x_width: 20.641681129119775, xmin: 195.33146401815208, y_height: 43.76800906081877,
+    ymin: 506.10344101767777}
+  - {class: Red, x_width: 19.49492106639093, xmin: 289.1746624847985, y_height: 45.67927583203357,
+    ymin: 508.588087820257}
+  - {class: Red, x_width: 19.112667712147925, xmin: 378.43082070052947, y_height: 44.53251576930478,
+    ymin: 511.45498797707916}
+  class: image
+  filename: ./sim_data_capture/left0507.jpg
+- annotations:
+  - {class: Red, x_width: 20.4505544519983, xmin: 204.5055445199831, y_height: 44.53251576930478,
+    ymin: 507.2502010804066}
+  - {class: Red, x_width: 16.81914758669018, xmin: 298.92212301799395, y_height: 45.87040250915504,
+    ymin: 508.97034117449994}
+  - {class: Red, x_width: 16.245767555325756, xmin: 388.5605345879679, y_height: 46.44378254051952,
+    ymin: 510.11710123722884}
+  class: image
+  filename: ./sim_data_capture/left0508.jpg
+- annotations:
+  - {class: Red, x_width: 19.303794389269427, xmin: 215.01751176166445, y_height: 45.67927583203357,
+    ymin: 500.7518940582763}
+  - {class: Red, x_width: 25.802101411399747, xmin: 304.8470500087598, y_height: 48.73730266597727,
+    ymin: 501.32527408964074}
+  - {class: Red, x_width: 21.406187837605728, xmin: 399.4547551838922, y_height: 49.31068269734169,
+    ymin: 504.19217424646297}
+  class: image
+  filename: ./sim_data_capture/left0509.jpg
+- annotations:
+  - {class: Red, x_width: 23.89083464018495, xmin: 214.25300505317853, y_height: 49.119556020220216,
+    ymin: 495.97372713023935}
+  - {class: Red, x_width: 24.081961317306423, xmin: 308.8607102283109, y_height: 51.41307614567802,
+    ymin: 496.9293605158467}
+  - {class: Red, x_width: 22.3618212232131, xmin: 403.8506687576862, y_height: 50.8396961143136,
+    ymin: 500.1785140269119}
+  class: image
+  filename: ./sim_data_capture/left0510.jpg
+- annotations:
+  - {class: Red, x_width: 22.93520125457752, xmin: 216.5465251786363, y_height: 49.11955602022016,
+    ymin: 493.48908032766013}
+  - {class: Red, x_width: 17.96590764941908, xmin: 314.97676389619824, y_height: 50.8396961143136,
+    ymin: 496.9293605158467}
+  - {class: Red, x_width: 26.184354765642695, xmin: 402.32165534071436, y_height: 48.92842934309874,
+    ymin: 499.6051339955475}
+  class: image
+  filename: ./sim_data_capture/left0511.jpg
+- annotations:
+  - {class: Red, x_width: 24.273087994427897, xmin: 215.39976511590743, y_height: 50.07518940582759,
+    ymin: 492.15119358780976}
+  - {class: Red, x_width: 21.597314514727202, xmin: 313.2566238021049, y_height: 50.07518940582764,
+    ymin: 494.4447137132675}
+  - {class: Red, x_width: 23.89083464018495, xmin: 407.29094894587286, y_height: 52.36870953128539,
+    ymin: 497.3116138700897}
+  class: image
+  filename: ./sim_data_capture/left0512.jpg
+- annotations:
+  - {class: Red, x_width: 26.37548144276417, xmin: 211.19497821923486, y_height: 52.750962885528395,
+    ymin: 490.23992681659496}
+  - {class: Red, x_width: 25.41984805715674, xmin: 314.02113051059087, y_height: 51.79532949992097,
+    ymin: 495.97372713023935}
+  - {class: Red, x_width: 24.273087994427897, xmin: 409.3933423942091, y_height: 50.83969611431354,
+    ymin: 498.0761205785756}
+  class: image
+  filename: ./sim_data_capture/left0513.jpg
+- annotations:
+  - {class: Red, x_width: 25.03759470291382, xmin: 212.7239916362067, y_height: 50.07518940582764,
+    ymin: 494.25358703614603}
+  - {class: Red, x_width: 22.552947900334573, xmin: 314.5945105419553, y_height: 50.266316082949174,
+    ymin: 497.1204871929682}
+  - {class: Red, x_width: 21.406187837605728, xmin: 412.0691158739098, y_height: 51.60420282279949,
+    ymin: 499.6051339955475}
+  class: image
+  filename: ./sim_data_capture/left0514.jpg
+- annotations:
+  - {class: Red, x_width: 21.215061160484225, xmin: 215.20863843878593, y_height: 49.11955602022027,
+    ymin: 490.0488001394735}
+  - {class: Red, x_width: 23.508581285942, xmin: 315.1678905733197, y_height: 47.59054260324842,
+    ymin: 497.1204871929682}
+  - {class: Red, x_width: 22.170694546091624, xmin: 414.93601603073205, y_height: 50.64856943719212,
+    ymin: 497.1204871929682}
+  class: image
+  filename: ./sim_data_capture/left0515.jpg
+- annotations:
+  - {class: Red, x_width: 22.361821223213127, xmin: 209.28371144802006, y_height: 50.648569437192066,
+    ymin: 489.66654678523054}
+  - {class: Red, x_width: 23.126327931698995, xmin: 314.78563721907676, y_height: 51.79532949992097,
+    ymin: 495.7826004531179}
+  - {class: Red, x_width: 24.655341348670845, xmin: 414.7448893536106, y_height: 49.69293605158464,
+    ymin: 495.5914737759964}
+  class: image
+  filename: ./sim_data_capture/left0516.jpg
+- annotations:
+  - {class: Red, x_width: 23.508581285941972, xmin: 208.9014580937771, y_height: 51.98645617704244,
+    ymin: 488.1375333682587}
+  - {class: Red, x_width: 21.597314514727145, xmin: 312.10986373937607, y_height: 53.32434291689282,
+    ymin: 489.47542010810906}
+  - {class: Red, x_width: 17.392527618054658, xmin: 417.61178951043274, y_height: 51.41307614567796,
+    ymin: 494.06246035902456}
+  class: image
+  filename: ./sim_data_capture/left0517.jpg
+- annotations:
+  - {class: Red, x_width: 20.832807806241277, xmin: 209.8570914793845, y_height: 51.60420282279949,
+    ymin: 484.3149998258291}
+  - {class: Red, x_width: 22.744074577456047, xmin: 312.10986373937607, y_height: 50.64856943719212,
+    ymin: 489.09316675386606}
+  - {class: Red, x_width: 24.46421467154937, xmin: 415.1271427078535, y_height: 51.986456177042385,
+    ymin: 493.8713336819031}
+  class: image
+  filename: ./sim_data_capture/left0518.jpg
+- annotations:
+  - {class: Red, x_width: 25.037594702913793, xmin: 204.31441784286162, y_height: 52.75096288552834,
+    ymin: 484.50612650295056}
+  - {class: Red, x_width: 23.31745460882047, xmin: 312.492117093619, y_height: 52.177582854163916,
+    ymin: 488.1375333682587}
+  - {class: Red, x_width: 22.170694546091624, xmin: 416.0827760934609, y_height: 54.088849625378714,
+    ymin: 490.43105349371643}
+  class: image
+  filename: ./sim_data_capture/left0519.jpg
+- annotations:
+  - {class: Red, x_width: 27.90449485973602, xmin: 201.06526433179644, y_height: 54.08884962537866,
+    ymin: 479.5368328977921}
+  - {class: Red, x_width: 20.4505544519983, xmin: 313.2566238021049, y_height: 54.47110297962166,
+    ymin: 485.65288656567947}
+  - {class: Red, x_width: 20.259427774876826, xmin: 417.2295361561898, y_height: 52.36870953128533,
+    ymin: 490.0488001394735}
+  class: image
+  filename: ./sim_data_capture/left0520.jpg
+- annotations:
+  - {class: Red, x_width: 24.081961317306423, xmin: 200.87413765467497, y_height: 47.39941592612689,
+    ymin: 481.25697299188545}
+  - {class: Red, x_width: 21.215061160484197, xmin: 312.30099041649754, y_height: 50.26631608294906,
+    ymin: 483.5504931173432}
+  - {class: Red, x_width: 20.641681129119775, xmin: 420.8609430214979, y_height: 50.45744276007065,
+    ymin: 488.51978672250164}
+  class: image
+  filename: ./sim_data_capture/left0521.jpg
+- annotations:
+  - {class: Red, x_width: 23.508581285941972, xmin: 200.87413765467497, y_height: 51.986456177042385,
+    ymin: 478.5811995121847}
+  - {class: Red, x_width: 25.802101411399747, xmin: 310.38972364528274, y_height: 56.76462310507935,
+    ymin: 481.25697299188545}
+  - {class: Red, x_width: 23.126327931698995, xmin: 418.75854957316164, y_height: 57.33800313644383,
+    ymin: 487.3730266597728}
+  class: image
+  filename: ./sim_data_capture/left0522.jpg
+- annotations:
+  - {class: Red, x_width: 30.962521693679662, xmin: 193.2290705698158, y_height: 58.29363652205126,
+    ymin: 474.5675392926336}
+  - {class: Red, x_width: 25.99322808852122, xmin: 312.10986373937607, y_height: 65.74757692978898,
+    ymin: 474.9497926468766}
+  - {class: Red, x_width: 24.655341348670845, xmin: 419.714182958769, y_height: 57.14687645932236,
+    ymin: 483.5504931173432}
+  class: image
+  filename: ./sim_data_capture/left0523.jpg
+- annotations:
+  - {class: Red, x_width: 27.139988151250094, xmin: 255.34524063429663, y_height: 60.58715664750895,
+    ymin: 473.80303258414773}
+  - {class: Red, x_width: 26.94886147412865, xmin: 367.5366001046051, y_height: 61.35166335599496,
+    ymin: 474.5675392926336}
+  - {class: Red, x_width: 24.46421467154937, xmin: 482.78598640885724, y_height: 67.4677170238823,
+    ymin: 476.28767938672695}
+  class: image
+  filename: ./sim_data_capture/left0524.jpg
+- annotations:
+  - {class: Red, x_width: 26.94886147412859, xmin: 280.191708660089, y_height: 57.33800313644389,
+    ymin: 474.37641261551215}
+  - {class: Red, x_width: 28.286748213978967, xmin: 391.42743474479005, y_height: 60.96941000175195,
+    ymin: 476.8610594180914}
+  - {class: Red, x_width: 34.40280188186631, xmin: 501.5164007667623, y_height: 57.33800313644383,
+    ymin: 479.34570622067065}
+  class: image
+  filename: ./sim_data_capture/left0525.jpg
+- annotations:
+  - {class: Red, x_width: 27.331114828371597, xmin: 302.935783237545, y_height: 58.675889876294264,
+    ymin: 471.5095124586899}
+  - {class: Red, x_width: 34.78505523610926, xmin: 412.4513692281528, y_height: 57.91138316780831,
+    ymin: 474.37641261551215}
+  - {class: Red, x_width: 29.242381599586338, xmin: 530.1854023349842, y_height: 56.57349642795788,
+    ymin: 478.7723261893062}
+  class: image
+  filename: ./sim_data_capture/left0526.jpg
+- annotations:
+  - {class: Red, x_width: 25.610974734278273, xmin: 314.97676389619824, y_height: 61.16053667887343,
+    ymin: 467.87810559338186}
+  - {class: Red, x_width: 27.139988151250066, xmin: 431.7551636174222, y_height: 62.68955009584528,
+    ymin: 470.74500575020403}
+  - {class: Red, x_width: 24.273087994427897, xmin: 549.2980700471321, y_height: 59.63152326190169,
+    ymin: 479.1545795435491}
+  class: image
+  filename: ./sim_data_capture/left0527.jpg
+- annotations:
+  - {class: Red, x_width: 28.286748213978967, xmin: 326.6354912006085, y_height: 62.4984234187238,
+    ymin: 466.15796549928854}
+  - {class: Red, x_width: 31.153648370801193, xmin: 446.28079107865466, y_height: 64.98307022130302,
+    ymin: 467.30472556201744}
+  - {class: Red, x_width: 25.228721380035267, xmin: 565.1615842482149, y_height: 57.72025649068678,
+    ymin: 472.8473991985403}
+  class: image
+  filename: ./sim_data_capture/left0528.jpg
+- annotations:
+  - {class: Red, x_width: 30.771395016558188, xmin: 331.222531451524, y_height: 63.45405680433123,
+    ymin: 460.42416518564414}
+  - {class: Red, x_width: 31.153648370801136, xmin: 453.7347314863924, y_height: 67.08546366963935,
+    ymin: 463.8644453738308}
+  - {class: Red, x_width: 32.30040843353004, xmin: 574.3356647500459, y_height: 59.631523261901634,
+    ymin: 468.83373897898923}
+  class: image
+  filename: ./sim_data_capture/left0529.jpg
+- annotations:
+  - {class: Green, x_width: 29.815761630950817, xmin: 333.7071782541032, y_height: 61.160536678873484,
+    ymin: 457.557265028822}
+  - {class: Green, x_width: 29.051254922464864, xmin: 459.2774051229153, y_height: 67.84997037812525,
+    ymin: 460.23303850852267}
+  - {class: Green, x_width: 28.860128245343503, xmin: 582.5541118662695, y_height: 60.96941000175195,
+    ymin: 464.82007875943816}
+  class: image
+  filename: ./sim_data_capture/left0530.jpg
+- annotations:
+  - {class: Green, x_width: 28.86012824534339, xmin: 322.8129576581789, y_height: 63.454056804331174,
+    ymin: 454.69036487199975}
+  - {class: Green, x_width: 34.40280188186631, xmin: 446.0896644015332, y_height: 66.32095696115334,
+    ymin: 459.65965847715825}
+  - {class: Green, x_width: 31.535901725044027, xmin: 571.0865112389808, y_height: 67.65884370100372,
+    ymin: 461.57092524837304}
+  class: image
+  filename: ./sim_data_capture/left0531.jpg
+- annotations:
+  - {class: Green, x_width: 28.286748213978967, xmin: 234.51243282805535, y_height: 64.60081686706008,
+    ymin: 451.0589580066917}
+  - {class: Green, x_width: 27.52224150549307, xmin: 366.1987133647547, y_height: 65.9387036069104,
+    ymin: 455.07261822624275}
+  - {class: Green, x_width: 28.09562153685755, xmin: 491.00443352508086, y_height: 61.73391671023785,
+    ymin: 460.23303850852267}
+  class: image
+  filename: ./sim_data_capture/left0532.jpg
+- annotations:
+  - {class: Green, x_width: 31.153648370801164, xmin: 163.79556229310793, y_height: 68.61447708661115,
+    ymin: 443.79614427607544}
+  - {class: Green, x_width: 28.286748213978967, xmin: 296.0552228611718, y_height: 65.55645025266745,
+    ymin: 451.0589580066917}
+  - {class: Green, x_width: 28.286748213978967, xmin: 421.6254497299838, y_height: 63.645183481452705,
+    ymin: 456.4105049660931}
+  class: image
+  filename: ./sim_data_capture/left0533.jpg
+- annotations:
+  - {class: Green, x_width: 27.522241505493042, xmin: 100.72375884301971, y_height: 68.04109705524667,
+    ymin: 439.4002307022814}
+  - {class: Green, x_width: 27.33111482837154, xmin: 235.85031956790573, y_height: 68.99673044085404,
+    ymin: 445.1340310159258}
+  - {class: Green, x_width: 26.566608119885643, xmin: 367.3454734274836, y_height: 67.27659034676071,
+    ymin: 451.25008468381316}
+  class: image
+  filename: ./sim_data_capture/left0534.jpg
+- annotations:
+  - {class: Green, x_width: 27.139988151250094, xmin: 76.64179752571329, y_height: 68.61447708661115,
+    ymin: 435.95995051409477}
+  - {class: Green, x_width: 29.051254922464892, xmin: 211.57723157347783, y_height: 63.645183481452705,
+    ymin: 443.9872709531969}
+  - {class: Green, x_width: 28.86012824534339, xmin: 346.13041226699943, y_height: 64.79194354418155,
+    ymin: 448.38318452699093}
+  class: image
+  filename: ./sim_data_capture/left0535.jpg
+- annotations:
+  - {class: Green, x_width: 28.477874891100456, xmin: 76.83292420283476, y_height: 67.84997037812525,
+    ymin: 436.72445722258067}
+  - {class: Green, x_width: 31.727028402165587, xmin: 212.91511831332818, y_height: 68.80560376373262,
+    ymin: 441.69375082773917}
+  - {class: Green, x_width: 28.286748213978967, xmin: 346.5126656212424, y_height: 66.12983028403193,
+    ymin: 446.8541711100191}
+  class: image
+  filename: ./sim_data_capture/left0536.jpg
+- annotations:
+  - {class: Green, x_width: 17.96590764941908, xmin: 65.74757692978895, y_height: 69.37898379509704,
+    ymin: 431.56403694030075}
+  - {class: Green, x_width: 31.535901725044113, xmin: 193.61132392405875, y_height: 67.0854636696393,
+    ymin: 437.6800906081881}
+  - {class: Green, x_width: 30.00688830807229, xmin: 331.7959114828884, y_height: 68.80560376373262,
+    ymin: 442.45825753622506}
+  class: image
+  filename: ./sim_data_capture/left0537.jpg
+- annotations:
+  - {class: Green, x_width: 28.286748213978996, xmin: 187.11301690192843, y_height: 66.89433699251782,
+    ymin: 433.666430388637}
+  - {class: Green, x_width: 24.655341348670845, xmin: 327.01774455485145, y_height: 67.0854636696393,
+    ymin: 439.20910402515995}
+  class: image
+  filename: ./sim_data_capture/left0538.jpg
+- annotations:
+  - {class: Green, x_width: 32.873788464894474, xmin: 84.66911796481543, y_height: 73.58377069176959,
+    ymin: 423.7278431783201}
+  - {class: Green, x_width: 27.90449485973602, xmin: 233.55679944244798, y_height: 67.65884370100378,
+    ymin: 431.7551636174222}
+  - {class: Green, x_width: 32.10928175640856, xmin: 374.60828715809987, y_height: 68.61447708661115,
+    ymin: 435.95995051409477}
+  class: image
+  filename: ./sim_data_capture/left0539.jpg
+- annotations:
+  - {class: Green, x_width: 35.740688621716686, xmin: 132.4507872451853, y_height: 74.15715072313407,
+    ymin: 424.492349886806}
+  - {class: Green, x_width: 32.49153511065151, xmin: 281.7207220770608, y_height: 74.34827740025548,
+    ymin: 426.7858700122638}
+  - {class: Green, x_width: 31.153648370801193, xmin: 428.1237567521141, y_height: 70.90799721206895,
+    ymin: 434.6220637742444}
+  class: image
+  filename: ./sim_data_capture/left0540.jpg
+- annotations:
+  - {class: Green, x_width: 34.02054852762336, xmin: 153.47472172854805, y_height: 72.43701062904074,
+    ymin: 419.1408029274046}
+  - {class: Green, x_width: 37.46082871581001, xmin: 302.935783237545, y_height: 73.39264401464811,
+    ymin: 427.16812336650673}
+  - {class: Green, x_width: 31.53590172504414, xmin: 452.396844746542, y_height: 72.43701062904069,
+    ymin: 432.9019236801511}
+  class: image
+  filename: ./sim_data_capture/left0541.jpg
+- annotations:
+  - {class: Green, x_width: 35.16730859035221, xmin: 152.90134169718363, y_height: 71.09912388919037,
+    ymin: 420.8609430214979}
+  - {class: Green, x_width: 31.72702840216556, xmin: 305.9938100714887, y_height: 73.39264401464811,
+    ymin: 427.16812336650673}
+  - {class: Green, x_width: 34.593928558987784, xmin: 450.10332462108425, y_height: 74.53940407737701,
+    ymin: 429.65277016908595}
+  class: image
+  filename: ./sim_data_capture/left0542.jpg
+- annotations:
+  - {class: Green, x_width: 31.53590172504414, xmin: 172.96964279493895, y_height: 76.83292420283476,
+    ymin: 413.2158759366387}
+  - {class: Green, x_width: 35.35843526747374, xmin: 327.01774455485145, y_height: 78.55306429692808,
+    ymin: 420.09643631301196}
+  - {class: Green, x_width: 34.211675204744836, xmin: 478.3900728350632, y_height: 78.93531765117103,
+    ymin: 426.97699668938526}
+  class: image
+  filename: ./sim_data_capture/left0543.jpg
+- annotations:
+  - {class: Green, x_width: 33.44716849625891, xmin: 175.07203624327525, y_height: 81.41996445375031,
+    ymin: 408.2465823314802}
+  - {class: Green, x_width: 35.35843526747374, xmin: 333.1337982227388, y_height: 80.65545774526436,
+    ymin: 411.6868625196669}
+  - {class: Green, x_width: 37.651955392931484, xmin: 486.60851995128684, y_height: 81.0377110995073,
+    ymin: 419.33192960452607}
+  class: image
+  filename: ./sim_data_capture/left0544.jpg
+- annotations:
+  - {class: Green, x_width: 33.638295173380385, xmin: 176.60104966024707, y_height: 82.9489778707221,
+    ymin: 407.6732023001158}
+  - {class: Green, x_width: 34.40280188186631, xmin: 334.2805582854677, y_height: 77.78855758844213,
+    ymin: 414.7448893536106}
+  - {class: Green, x_width: 33.82942185050183, xmin: 491.7689402335668, y_height: 78.17081094268514,
+    ymin: 422.3899564384697}
+  class: image
+  filename: ./sim_data_capture/left0545.jpg
+- annotations:
+  - {class: Green, x_width: 37.26970203868851, xmin: 170.10274263811678, y_height: 78.74419097404956,
+    ymin: 401.366021955107}
+  - {class: Green, x_width: 33.44716849625888, xmin: 338.1030918278973, y_height: 78.55306429692808,
+    ymin: 408.8199623628447}
+  - {class: Green, x_width: 34.59392855898773, xmin: 499.6051339955475, y_height: 79.69982435965699,
+    ymin: 414.36263599936757}
+  class: image
+  filename: ./sim_data_capture/left0546.jpg
+- annotations:
+  - {class: Green, x_width: 32.30040843353004, xmin: 168.19147586690198, y_height: 85.6247513504228,
+    ymin: 395.24996828721964}
+  - {class: Green, x_width: 35.93181529883816, xmin: 339.24985189062613, y_height: 82.1844711622362,
+    ymin: 401.74827530934994}
+  - {class: Green, x_width: 36.50519533020258, xmin: 504.19217424646297, y_height: 85.05137131905838,
+    ymin: 409.5844690713306}
+  class: image
+  filename: ./sim_data_capture/left0547.jpg
+- annotations:
+  - {class: Green, x_width: 39.563222164146254, xmin: 168.38260254402343, y_height: 82.1844711622362,
+    ymin: 396.39672834994855}
+  - {class: Green, x_width: 32.30040843353004, xmin: 339.82323192199055, y_height: 83.14010454784358,
+    ymin: 403.0861620492003}
+  - {class: Green, x_width: 39.18096880990328, xmin: 502.8542875066126, y_height: 84.8602446419369,
+    ymin: 409.0110890399662}
+  class: image
+  filename: ./sim_data_capture/left0548.jpg
+- annotations:
+  - {class: Green, x_width: 36.50519533020258, xmin: 161.5020421676502, y_height: 86.96263809027317,
+    ymin: 390.0895480049397}
+  - {class: Green, x_width: 35.9318152988381, xmin: 338.29421850501876, y_height: 89.25615821573092,
+    ymin: 394.6765882558552}
+  - {class: Green, x_width: 35.16730859035226, xmin: 508.20583446601404, y_height: 83.52235790208653,
+    ymin: 403.65954208056473}
+  class: image
+  filename: ./sim_data_capture/left0549.jpg
+- annotations:
+  - {class: Green, x_width: 36.50519533020261, xmin: 159.78190207355686, y_height: 88.10939815300208,
+    ymin: 385.69363443114565}
+  - {class: Green, x_width: 37.078575361567005, xmin: 338.48534518214024, y_height: 86.96263809027317,
+    ymin: 390.8540547134256}
+  - {class: Green, x_width: 39.18096880990328, xmin: 510.69048126859326, y_height: 85.6247513504228,
+    ymin: 399.2636285067707}
+  class: image
+  filename: ./sim_data_capture/left0550.jpg
