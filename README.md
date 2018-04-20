@@ -60,11 +60,23 @@ The system architecture diagram shows ROS nodes and topics used in the project
 
 #### Perception Subsystem
 
+Perception subsystem provides information about the environment and transfer to the other subsystems. It's uses cameras and sensor information to detect obstacles and traffic lights. Also, the perception subsystem needs to classify information before share with other subsystems.
+
 ##### Traffic Light Detection
 
 ##### Traffic Light Classification
 
+Traffic Light Classification is the ability to classify the colors in a detected traffic light. The classification needs the ability to classify the correct color over diferent situations like brightness, sun exposure, fog, rain and all other natural events, consisting in a challenge situation.
+
+To provide correct classification over differenct scenarios, this node uses a pre trained deep neural network (DNN) with [Bosch Small Traffic Lights](https://hci.iwr.uni-heidelberg.de/node/6132)  and the [Kaggle LISA Traffic Light](https://www.kaggle.com/mbornoe/lisa-traffic-light-dataset/version/2) datasets.
+
+The DNN was trained using Tensorflow Object Detection API. More details about how the training process was made can be found in our turorial [here](https://github.com/Merberg/CarND-Capstone/blob/master/training/README.md).
+
 ##### Obstacle Detection
+
+Obstatcle detection uses sensor and camera information to identify near obstacles, providing safety information for planning and controller subsystems.
+
+*In this project, obstacle detection was not developed.*
 
 #### Planning Subsystem
 
