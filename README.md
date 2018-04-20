@@ -99,7 +99,14 @@ Control subsystem is responsible for use information of planning subsystem and p
 
 ##### Twist Controller
 
+Twist Controller is an implementation combining PID Controller, Yaw Controller and a Low Pass Filter. This controller is responsible for use information about the vehicle (mass, fuel capacity, max steering angle, etc), and define the values of throttle, brake and the angle of the steering wheel.
+
+* **PID controller**: has the responsibility to define the throttle value of the vehicle, minimizing error in a sample time. 
+* **Yaw controller**: has the resposiblity to define the steering angle, for the current velocity, acceleration and other variables.
+* **Low-Pass Filter**: is not a controller but a filter to limit to restrict the frequency and attenuates signals that is higher than a certain value (called cutoff frequency)
+
 ##### DBW Controller
+
 
 ## Test and Running
 
