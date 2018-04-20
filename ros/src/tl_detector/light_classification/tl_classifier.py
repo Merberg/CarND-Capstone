@@ -7,8 +7,6 @@ import tensorflow as tf
 class TLClassifier(object):
     def __init__(self):
         
-        self.detected_light = TrafficLight.UNKNOWN      
-                
         # Load the classifier
         pwd = os.path.dirname(os.path.realpath(__file__))     
         PATH_TO_MODEL = pwd + '/frozen_inference_graph.pb'
@@ -29,6 +27,7 @@ class TLClassifier(object):
         self.detection_classes = self.detection_graph.get_tensor_by_name('detection_classes:0')
         self.num_detections = self.detection_graph.get_tensor_by_name('num_detections:0')
         
+        self.current_light = TrafficLight.RED
 
     def get_classification(self, image):
         
@@ -55,7 +54,7 @@ class TLClassifier(object):
         largest_box_height = 0
         best_score = MIN_SCORE_THRESH
         best_class_idx = 2    
-        self.detected_light = TrafficLight.UNKNOWN
+        self.current_light = TrafficLight.UNKNOWN
         detected = False
         
         # Detections are ranked with highest scores first, only process a handful
@@ -79,10 +78,10 @@ class TLClassifier(object):
                     rospy.loginfo('    Best %d score %.3f', classes[idx], scores[idx])          
         
         if detected:
-            self.detected_light = self.decode_classification(best_class_idx)
+            self.current_light = self.decode_classification(best_class_idx)
             rospy.loginfo('Detected %d', best_class_idx)
                          
-        return self.detected_light
+        return self.current_light
     
     def decode_classification(self, class_index):
         # Constants from the label_map.pbtext used in training
@@ -100,3 +99,4 @@ class TLClassifier(object):
             detected_light = TrafficLight.UNKNOWN
             
         return detected_light
+

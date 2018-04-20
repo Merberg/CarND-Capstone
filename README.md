@@ -1,74 +1,109 @@
+# Self-Driving Car Nanodegree - Capstone
+
+[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
+
 This is the project repo for the final project of the Udacity Self-Driving Car Nanodegree: Programming a Real Self-Driving Car. For more information about the project, see the project introduction [here](https://classroom.udacity.com/nanodegrees/nd013/parts/6047fe34-d93c-4f50-8336-b70ef10cb4b2/modules/e1a23b06-329a-4684-a717-ad476f0d8dff/lessons/462c933d-9f24-42d3-8bdc-a08a5fc866e4/concepts/5ab4b122-83e6-436d-850f-9f4d26627fd9).
 
-Please use **one** of the two installation options, either native **or** docker installation.
 
-### Native Installation
+## Team Members
 
-* Be sure that your workstation is running Ubuntu 16.04 Xenial Xerus or Ubuntu 14.04 Trusty Tahir. [Ubuntu downloads can be found here](https://www.ubuntu.com/download/desktop).
-* If using a Virtual Machine to install Ubuntu, use the following configuration as minimum:
-  * 2 CPU
-  * 2 GB system memory
-  * 25 GB of free hard drive space
+| Name  | Email | Responsibilities & Contributions |
+| ----- | ----- | ---------------- | 
+| [Ramesh Misra](http://github.com/ramesh)       | ramesh.misra@gmail.com     | Team Lead |
+| [Alan Gordon](http://github.com/alangordon258) | alangordon258@gmail.com    | Trajectory planner and control |
+| [Andrea Dranberg](http://github.com/merberg)   | merrick.dranberg@gmail.com | Traffic Light Classification |
+| [Felipe Reis](http://github.com/falreis)       | falreis@gmail.com          | Trajectory planner and control |
 
-  The Udacity provided virtual machine has ROS and Dataspeed DBW already installed, so you can skip the next two steps if you are using this.
 
-* Follow these instructions to install ROS
-  * [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu) if you have Ubuntu 16.04.
-  * [ROS Indigo](http://wiki.ros.org/indigo/Installation/Ubuntu) if you have Ubuntu 14.04.
-* [Dataspeed DBW](https://bitbucket.org/DataspeedInc/dbw_mkz_ros)
-  * Use this option to install the SDK on a workstation that already has ROS installed: [One Line SDK Install (binary)](https://bitbucket.org/DataspeedInc/dbw_mkz_ros/src/81e63fcc335d7b64139d7482017d6a97b405e250/ROS_SETUP.md?fileviewer=file-view-default)
-* Download the [Udacity Simulator](https://github.com/udacity/CarND-Capstone/releases).
+## Contents
 
-### Docker Installation
-[Install Docker](https://docs.docker.com/engine/installation/)
+* [Installation](#installation)
+* [System Details](#system-details)
+  * [Software Architecture](#software-architecture)
+  * [Subsystems](#subsystems)
+  * [Perception Subsystem](#perception-subsystem)
+    * [Traffic Light Detection](#traffic-light-detection)
+    * [Traffic Light Classification](#traffic-light-classification)
+    * [Obstacle Detection](#traffic-light-classification)
+  * [Planning Subsystem](#perception-subsystem)
+    * [Waypoint Loader](#waypoint-loader)
+    * [Waypoint Updater](#waypoint-updater)
+  * [Control Subsystem](#control-subsystem)
+    * [Twist Controller](#twist-controller)
+    * [Drive-By-Wire Controller](#dbw-controller)
+* [Test and Running](#test-and-running)
+  * [Testing in Simulator](#testing-in-simulator)
+  * [Testing with Real Data](#testing-with-real-data)
+  * [Running in Real World](#running-in-real-world)
+* [Next Steps](#next-steps)
+  * [Goals](#goals)
+  * [Known Issues](#known-issues)
 
-Build the docker container
-```bash
-docker build . -t capstone
-```
+## Installation
 
-Run the docker file
-```bash
-docker run -p 4567:4567 -v $PWD:/capstone -v /tmp/log:/root/.ros/ --rm -it capstone
-```
+Please follow detailed information about how to install and configure the project [here](https://github.com/Merberg/CarND-Capstone/blob/master/installation.md).
 
-### Port Forwarding
-To set up port forwarding, please refer to the [instructions from term 2](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/0949fca6-b379-42af-a919-ee50aa304e6a/lessons/f758c44c-5e40-4e01-93b5-1a82aa4e044f/concepts/16cf4a78-4fc7-49e1-8621-3450ca938b77)
+## System Details
 
-### Usage
+This section contains information about software architecture and some details of the implementation.
 
-1. Clone the project repository
-```bash
-git clone https://github.com/udacity/CarND-Capstone.git
-```
+The code is written in Pyhton and C++. Also, it's use some libraries like [Tensorflow](https://www.tensorflow.org/) and [ROS](http://www.ros.org/). 
 
-2. Install python dependencies
-```bash
-cd CarND-Capstone
-pip install -r requirements.txt
-```
-3. Make and run styx
-```bash
-cd ros
-catkin_make
-source devel/setup.sh
-roslaunch launch/styx.launch
-```
-4. Run the simulator
+### Software Architecture
 
-### Real world testing
-1. Download [training bag](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/traffic_light_bag_file.zip) that was recorded on the Udacity self-driving car.
-2. Unzip the file
-```bash
-unzip traffic_light_bag_file.zip
-```
-3. Play the bag file
-```bash
-rosbag play -l traffic_light_bag_file/traffic_light_training.bag
-```
-4. Launch your project in site mode
-```bash
-cd CarND-Capstone/ros
-roslaunch launch/site.launch
-```
-5. Confirm that traffic light detection works on real life images
+The system architecture diagram shows ROS nodes and topics used in the project 
+
+![software_architecture](imgs/readme_files/final-project-ros-graph-v2.png)
+*(Software Architecture - diagram was provided by Udacity)*
+
+### Subsystems
+
+#### Perception Subsystem
+
+##### Traffic Light Detection
+
+##### Traffic Light Classification
+
+##### Obstacle Detection
+
+#### Planning Subsystem
+
+##### Waypoint Loader
+
+##### Waypoint Updater
+
+#### Control Subsystem
+
+##### Twist Controller
+
+##### DBW Controller
+
+## Test and Running
+
+### Testing in Simulator
+
+To develop the project, the first step is to run the code in a simulator provided by Udacity. The simulator communicates with the code and reproduce the behavior of Carla (Udacity's Car) in a closed scenario, under control.
+
+![Testing in Simulator](imgs/readme_files/simulator.gif)
+
+### Testing with Real Data
+
+After running the code in a simulation scenario with fake data, we can increase the complexity and run the code with real data, but under the same simulation. This scenario give us real data and provide a feedback of possible problems the car will face in the real environment. 
+
+![Testing in Simulator](imgs/readme_files/simulator.gif)
+***TODO:*** *Change this image*
+
+### Running in Real World
+
+Coming soon..
+
+## Next Steps
+
+In this section shows the next steps for the project, our goals and known bugs.
+
+### Goals
+
+1. Implement Object detection
+2. Improve car behaviour in different scenarios
+
+### Known Issues
