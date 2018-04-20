@@ -3,7 +3,7 @@
 ## 1. Installation
 Install the Tensorflow Object Detection API per the [install Instructions](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md). 
 
-_Note: SHA bf65145d3a771bc0a585946a448fad8886d2c156 was checked out to use an earier version of the API._
+_Note: SHA 4a705e08ca8f28bd05bdc2287211ad8aba0bf98a was checked out to use an earier version of the API._
 
 The following folder structure is used for this project:
 ```
