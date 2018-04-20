@@ -29,7 +29,8 @@ This is the project repo for the final project of the Udacity Self-Driving Car N
     * [Waypoint Updater](#waypoint-updater)
   * [Control Subsystem](#control-subsystem)
     * [Twist Controller](#twist-controller)
-    * [Drive-By-Wire Controller](#dbw-controller)
+    * [Waypoint Follower](#waypoint-follower)
+    * [Drive-By-Wire Node](#dbw-node)
 * [Test and Running](#test-and-running)
   * [Testing in Simulator](#testing-in-simulator)
   * [Testing with Real Data](#testing-with-real-data)
@@ -104,9 +105,17 @@ Twist Controller is an implementation combining PID Controller, Yaw Controller a
 * **PID controller**: has the responsibility to define the throttle value of the vehicle, minimizing error in a sample time. 
 * **Yaw controller**: has the resposiblity to define the steering angle, for the current velocity, acceleration and other variables.
 * **Low-Pass Filter**: is not a controller but a filter to limit to restrict the frequency and attenuates signals that is higher than a certain value (called cutoff frequency)
+* ***Brake Controller***: is part of twist controller and define the value for the brake
 
-##### DBW Controller
+Twist Controller give the proposal angular and linear velocities and share this information (using waypoint to DBW Controller apply to the vehicle.
 
+##### Waypoint Follower
+
+Waypoint follower is a set of classes and functions provided by Udacity and it is developed in C++. It's uses information of Twist Controller and provide a single topic, with angular and linear velocities.
+
+##### DBW Node
+
+DBW Node has the responsibility to get the proposal angular and linear velocities given by Waypoint Follower, and transfer it to the Drive-By-Wire system. DBW Node must guarantee to publish the information in a correct frequency (50Hz) to keep the vehicle with enough data, working properly. If the information is below the frequency, the Drive-By-Wire system may stop the connection due to insuficient data. 
 
 ## Test and Running
 
