@@ -22,9 +22,8 @@ This is the project repo for the final project of the Udacity Self-Driving Car N
   * [Software Architecture](#software-architecture)
   * [Subsystems](#subsystems)
   * [Perception Subsystem](#perception-subsystem)
-    * [Traffic Light Detection](#traffic-light-detection)
-    * [Traffic Light Classification](#traffic-light-classification)
-    * [Obstacle Detection](#traffic-light-classification)
+    * [Traffic Light Detection and Classification](#traffic-light-detection-and-classification)
+    * [Obstacle Detection](#obstacle-detection)
   * [Planning Subsystem](#perception-subsystem)
     * [Waypoint Loader](#waypoint-loader)
     * [Waypoint Updater](#waypoint-updater)
@@ -62,13 +61,15 @@ The system architecture diagram shows ROS nodes and topics used in the project
 
 Perception subsystem provides information about the environment and transfer to the other subsystems. It's uses cameras and sensor information to detect obstacles and traffic lights. Also, the perception subsystem needs to classify information before share with other subsystems.
 
-##### Traffic Light Detection
+##### Traffic Light Detection and Classification
 
-##### Traffic Light Classification
+Traffic Light Detection is responsible for identify traffic lights in the images provided by the camera. The detection needs to identify over diferent situations like brightness, sun exposure, fog, rain and all other natural events, consisting in a challenge.
 
-Traffic Light Classification is the ability to classify the colors in a detected traffic light. The classification needs the ability to classify the correct color over diferent situations like brightness, sun exposure, fog, rain and all other natural events, consisting in a challenge situation.
+Traffic Light Classification is the ability to classify the colors in a detected traffic light. Like traffic light detection, the classifier needs to work properly in a range of different natural scenarios.
 
-To provide correct classification over differenct scenarios, this node uses a pre trained deep neural network (DNN) with [Bosch Small Traffic Lights](https://hci.iwr.uni-heidelberg.de/node/6132)  and the [Kaggle LISA Traffic Light](https://www.kaggle.com/mbornoe/lisa-traffic-light-dataset/version/2) datasets.
+In this project, traffic light detection and classification are separated in different parts that communicating using ROS topics. The detection node provides information to the classifier node, that classifies the information and provide to the planning and controller subsystems.
+
+To provide correct detection and classification over differenct scenarios, this nodes uses a pre trained deep neural network (DNN) with [Bosch Small Traffic Lights](https://hci.iwr.uni-heidelberg.de/node/6132)  and the [Kaggle LISA Traffic Light](https://www.kaggle.com/mbornoe/lisa-traffic-light-dataset/version/2) datasets.
 
 The DNN was trained using Tensorflow Object Detection API. More details about how the training process was made can be found in our turorial [here](https://github.com/Merberg/CarND-Capstone/blob/master/training/README.md).
 
@@ -80,11 +81,21 @@ Obstatcle detection uses sensor and camera information to identify near obstacle
 
 #### Planning Subsystem
 
+Planning subsystem uses information of the perception subsystem and other sensors (like velocity, orientation, etc) to plan the vehicle's path. This subsystem defines the best route and publish a list of waypoints representing the planned path. The waypoints are used by the control subsystem.
+
 ##### Waypoint Loader
+
+This waypoints consists in a CSV file that contains waypoints of the simulation. In a real world test for this project, this waypoints will be replaced by the real world waypoints. Outside this project, waypoint loader must be replaced by information provided by sensors.
 
 ##### Waypoint Updater
 
+Waypoint updater is the node responsible read information of the loaded waypoints and process it. It's uses also information of the velocity, direction and traffic lights to provide a new list of waypoints, with the planned path (with expected velocity and orientation). The waypoint updater updates the planned path every new cicle, adjusting the path with current information of velocity and other events that can happen in the travel.
+
+One important parameter to tuning is the number of information that needs to be updated. The confiability of the information decreases as far away they are from the current position. Also this require more time processing it. Then this parameter must be tuned to provide enough information to the control subsystem with confiability and quickness.
+
 #### Control Subsystem
+
+Control subsystem is responsible for use information of planning subsystem and publish the commands to the throttle, brake and the steering wheel. The controller subsystem is also responsible to keep the path as planned with a smooth trajectory, without high accelerate or brake.
 
 ##### Twist Controller
 
