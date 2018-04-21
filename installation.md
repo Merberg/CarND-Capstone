@@ -59,7 +59,7 @@ cd CarND-Capstone
 pip install -r requirements.txt
 ```
 
-3. Unzip training set (zip splitted in 2 files, because training set file is larger than allowed by Github)
+3. Unzip traffic light fine tuned model (zip splitted in 2 files, because the file is larger than allowed by Github)
 ```bash
 cd CarND-Capstone/ros/src/tl_detector/light_classification/
 zip -s 0 split-frozen.zip --out unsplit-frozen.zip
