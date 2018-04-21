@@ -9,7 +9,7 @@ This is the project repo for the final project of the Udacity Self-Driving Car N
 
 | Name  | Email | Responsibilities & Contributions |
 | ----- | ----- | ---------------- | 
-| [Ramesh Misra](http://github.com/ramesh)       | ramesh.misra@gmail.com     | Team Lead |
+| [Ramesh Misra](http://github.com/rameshmisra)  | ramesh.misra@gmail.com     | Team Lead |
 | [Alan Gordon](http://github.com/alangordon258) | alangordon258@gmail.com    | Trajectory planner and control |
 | [Andrea Dranberg](http://github.com/merberg)   | merrick.dranberg@gmail.com | Traffic Light Classification |
 | [Felipe Reis](http://github.com/falreis)       | falreis@gmail.com          | Trajectory planner and control |
