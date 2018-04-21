@@ -35,8 +35,6 @@ class WaypointUpdater(object):
         rospy.Subscriber('/traffic_waypoint', Int32, self.traffic_cb)
 
         # TODO: Add a subscriber for /traffic_waypoint and /obstacle_waypoint below
-
-
         self.final_waypoints_pub = rospy.Publisher('final_waypoints', Lane, queue_size=1)
 
         # TODO: Add other member variables you need below
@@ -96,8 +94,8 @@ class WaypointUpdater(object):
         farthest_idx=closest_idx+LOOKAHEAD_WPS
         base_waypoints=self.base_lane.waypoints[closest_idx:farthest_idx]
 
-        #if self.Stopline_wp_idx == -1 or (self.Stopline_wp_idx >= farthest_idx):
-        if self.Stopline_wp_idx == -1: #stop if light is red
+        if self.Stopline_wp_idx == -1 or (self.Stopline_wp_idx >= farthest_idx):
+        #if self.Stopline_wp_idx == -1: #stop if light is red
             lane.waypoints=base_waypoints
             self.isStopped = False
         else:
