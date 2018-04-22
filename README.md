@@ -129,7 +129,8 @@ To develop the project, the first step is to run the code in a simulator provide
 
 After running the code in a simulation scenario with fake data, we can increase the complexity and run the code with real data. This scenario uses a [bag](http://wiki.ros.org/Bags) with stored real data and "is generally no different from having ROS nodes send the same data, though you can run into issues with timestamped data stored inside of message data". This scenario provides a feedback of possible problems the car will face in the real environment. 
 
-![Testing with Real Data](imgs/readme_files/rosbag.gif)
+![Testing with Real Data](imgs/readme_files/rosbag.gif) 
+![Testing with Real Data](imgs/readme_files/rosbag_video1.gif)
 
 ### Running in Real World
 
