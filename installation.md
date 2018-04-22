@@ -59,7 +59,14 @@ cd CarND-Capstone
 pip install -r requirements.txt
 ```
 
-3. Make and run styx
+3. Unzip traffic light fine tuned model (zip splitted in 2 files, because the file is larger than allowed by Github)
+```bash
+cd CarND-Capstone/ros/src/tl_detector/light_classification/
+zip -s 0 split-frozen.zip --out unsplit-frozen.zip
+unzip unsplit-frozen.zip
+```
+
+4. Make and run styx
 ```bash
 cd ros
 catkin_make
